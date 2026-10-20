@@ -677,7 +677,7 @@ const KR={
 >데이트 잘 하고^^
 <응~
 `]])},
- jy:{n:'이주연',e:'IMG_0288.jpeg',u:0,msgs:kbuild([
+ jy:{n:'이주연',e:'👤',img:'IMG_0288.jpeg',u:0,msgs:kbuild([
 ['2026-08-18 20:20',`
 <주연아
 <너 반지 브랜드 잘 아냐?
@@ -695,7 +695,7 @@ const KR={
 >척하면 척이지
 <ㅋㅋ ㄱㅅ~
 `]])},
- sw:{n:'김선우',e:'IMG_0286.jpeg',u:0,msgs:kbuild([
+ sw:{n:'김선우',e:'👤',img:'IMG_0286.jpeg',u:0,msgs:kbuild([
 ['2026-08-09 21:47',`
 >롤 ㄱㄱ?
 <ㅇㅇ
@@ -711,7 +711,7 @@ const KR={
 <ㄱㄱ 몇 시?
 >단톡에서 얘기 ㄱㄱ
 `]])},
- cm:{n:'지창민',e:'IMG_0287.jpeg',u:0,msgs:kbuild([
+ cm:{n:'지창민',e:'👤',img:'IMG_0287.jpeg',u:0,msgs:kbuild([
 ['2026-11-12 21:16',`
 >형
 >어제 뭔 일 있었어?
@@ -740,7 +740,7 @@ const KR={
  /* 미리보기만 보이는 방 (클릭 불가) */
  fut:{n:'풋살팟⚽️',c:12,e:'⚽',u:4,ts:kms('2026-11-20 14:05'),p:'이번 주 풋살 경기 장소 공지합니다! 참석하실 분들은 참가의사 남겨주세요'},
  men:{n:'김민수, 최도현, 오재욱, 서민재, 준혁',c:6,e:'👥',u:7,ts:kms('2026-11-19 23:40'),p:'랭전 돌리실 분'},
- jc:{n:'제이콥',e:'IMG_0289.jpeg',u:0,ts:kms('2026-11-18 22:05'),p:'ㅋㅋㅋ 그랴'},
+ jc:{n:'제이콥',e:'👤',img:'IMG_0289.jpeg',u:0,ts:kms('2026-11-18 22:05'),p:'ㅋㅋㅋ 그랴'},
  hd:{n:'현대카드',e:'💳',u:1,ts:kms('2026-11-19 09:00'),p:'[현대카드] 10월 청구금액을 안내드립니다. 앱에서 확인해보세요.'},
  kb:{n:'카카오뱅크',e:'🏦',u:1,ts:kms('2026-11-15 10:30'),p:'이번 달 결제 내역을 확인해보세요'},
  r1:{n:'박도현',e:'👤',u:0,ts:kms('2026-11-16 20:12'),p:'ㅋㅋ그때 말한 맛집 링크 보내드릴게요~'},
@@ -832,7 +832,7 @@ IGP.h1={u:'_0hoony',img:'IMG_0201.jpeg',em:'IMG_0201.jpeg',c:'오늘도 러닝 �
 IGP.h2={u:'_0hoony',img:'IMG_0202.jpeg',em:'IMG_0202.jpeg',c:'혼자 카페',l:3544,n:96,d:'7월 11일',cm:[]};
 IGP.h3={u:'_0hoony',img:'IMG_0203.jpeg',em:'IMG_0203.jpeg',c:'촬영 끝!',l:5210,n:233,d:'6월 28일',cm:[]};
 IGP.h4={u:'_0hoony',img:'IMG_0204.jpeg',em:'IMG_0204.jpeg',c:'충격적인 맛',l:4890,n:171,d:'6월 2일',cm:[]};
-const lc=(k,on)=>IGP[k].l+(on?1:0)-(k==='a'?1:0);
+const PRE=k=>IGP[k].u==='_0hoony';const initLk=()=>Object.fromEntries(Object.keys(IGP).filter(PRE).map(k=>[k,1]));const lc=(k,on)=>IGP[k].l+(on?1:0)-(PRE(k)?1:0);
 const SV=(d,sw=1.9,f='none',st='#000')=>`<svg width="25" height="25" viewBox="0 0 24 24" fill="${f}" stroke="${st}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 const HP='<path d="M12 21S3 14.6 3 8.7C3 5.9 5.1 4 7.5 4c1.7 0 3.4 1 4.5 2.6C13.1 5 14.8 4 16.5 4 18.9 4 21 5.9 21 8.7 21 14.6 12 21 12 21z"/>',HM='<path d="M3.5 10.5 12 3.5l8.5 7V21h-5.5v-6.5h-5V21H3.5z"/>';
 const IGS={heart:on=>SV(HP,1.9,on?'#ff3040':'none',on?'#ff3040':'#000'),
@@ -850,7 +850,7 @@ function QRS(seed,sz){let o='',r=seed;for(let y=0;y<21;y++)for(let x=0;x<21;x++)
 IGP.k1027={u:'_0hoony',img:'IMG_0281.jpeg',em:'🌉',c:'즐겨🌉',l:4729,n:265,d:'10월 27일',cm:[['seo_yeonlee','오빠 전게시글에 반지 뭐냐고 나 집착광공 만들지말고 오빠!!!!!'],['leejaehyun0913','누가 찍어줬냐 잘 찍었네']]};
 IGP.k915={u:'_0hoony',img:'IMG_0256.jpeg',em:'☺️',imgs:[['IMG_0256.jpeg','☺️'],['IMG_0302.jpeg','🙂']],c:'☺️',l:6816,n:827,d:'9월 15일',cm:[['changmin_','왐마야~..'],['seo_yeonlee','중간에 뭐야 오빠?']]};
 IGP.k918={u:'_0hoony',img:'IMG_0256.jpeg',em:'💌',c:'💌',l:5120,n:310,d:'9월 18일',cm:[]};
-IGP.k1017={u:'leejaehyun0913',img:'IMG_0278.jpeg',em:'🌇',imgs:[['IMG_0278.jpeg','🌇'],['IMG_0278.jpeg','🌆'],['IMG_0277.jpeg','🌃'],['IMG_0275.jpeg','🏙️'],['IMG_0279.jpeg','🌉']],c:'일상',l:615,n:25,d:'10월 17일',cm:[['sunwoo','왐마야~'],['seo_yeonlee','네... 나 다 알아들엇긔']]};
+IGP.k1017={u:'leejaehyun0913',img:'IMG_0278.jpeg',em:'🌇',imgs:[['IMG_0278.jpeg','🌇'],['IMG_0280.jpeg','🌆'],['IMG_0277.jpeg','🌃'],['IMG_0275.jpeg','🏙️'],['IMG_0279.jpeg','🌉']],c:'일상',l:615,n:25,d:'10월 17일',cm:[['sunwoo','왐마야~'],['seo_yeonlee','네... 나 다 알아들엇긔']]};
 const PROF={'_0hoony':'hoony','leejaehyun0913':'profile'};
 const igl=u=>PROF[u]?`<button class="igu" data-a="igu" data-u="${u}">${E(u)}</button>`:E(u);
 const rel=ts=>{const ms=now().getTime()-cts(ts),d=Math.floor(ms/864e5);if(d<1)return Math.max(1,Math.floor(ms/36e5))+'시간';if(d<7)return d+'일';if(d<30)return Math.floor(d/7)+'주';return Math.floor(d/30)+'개월'};
@@ -985,7 +985,7 @@ instagram(){const s=S.s;s.v=s.v||'home';if(!s.lk)s.lk={a:1};
   return `<div class="page" style="background:#fff"><div class="igh" style="min-height:0;gap:8px"><b style="flex:1;font-size:21px">leejaehyun0913</b>${MENU}</div><div class="body" style="padding:0"><div style="display:flex;align-items:center;gap:24px;padding:10px 16px">${igav('leejaehyun0913',86)}${stats([['4','게시물'],['439','팔로워'],['83','팔로잉']])}</div><div style="padding:0 16px;font-size:14px;line-height:1.4"><b>이재현</b></div><div style="display:flex;gap:6px;padding:12px 16px">${['프로필 편집','프로필 공유'].map(t=>`<button data-a="toast" data-t="${t}" style="flex:1;background:#efefef;border-radius:8px;padding:8px;font-weight:600;font-size:13.5px">${t}</button>`).join('')}</div><div class="igpr" style="border-top:.5px solid #dbdbdb">${gr.map((k,i)=>i<1?`<div data-a="igpost" data-k="${k}">${igimg(IGP[k])}</div>`:`<div>${igimg(IGP[k])}</div>`).join('')}</div></div>${tab}</div>`}
  return `<div class="page" style="background:#fff"><div class="igh" style="min-height:0"><b style="flex:1;font-size:17px">게시물</b></div><div class="body" style="padding:0">${igpostH(s.pk||'k1017',s)}</div>${tab}</div>`},
 sawon(){const s=S.s;s.t=s.t||'id';const meal=s.t==='meal';
- const idCard=`<div class="idc"><div class="hd"><b style="font-size:20px;letter-spacing:2px">(주)TBZ</b><small>EMPLOYEE ID</small></div><div style="padding:22px;display:flex;gap:16px"><div style="width:96px;height:120px;border-radius:12px;position:relative;overflow:hidden;flex:none;background:linear-gradient(#c9ced6,#8f97a3);display:flex;align-items:center;justify-content:center;font-size:48px">🙂<img src="IMG_0340.jpeg" alt="" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div><div style="flex:1"><div style="font-size:26px;font-weight:800">이재현</div><div style="color:#555;margin:4px 0 12px">신사업기획팀 · 대리</div><div style="font-size:12px;color:#888">사번</div><div style="font-weight:700;font-size:17px">09130808</div><div style="font-size:12px;color:#888;margin-top:8px">입사일</div><div style="font-weight:600">2021.03.02</div></div></div><div style="text-align:center;padding:6px 22px 24px">${QRS(7,170)}<div style="color:#1f3fb5;font-size:13px;margin-top:6px">QR 갱신까지 <b id="qrt">00:30</b></div></div></div>`;
+ const idCard=`<div class="idc"><div class="hd"><b style="font-size:20px;letter-spacing:2px">(주)TBZ</b><small>EMPLOYEE ID</small></div><div style="padding:22px;display:flex;gap:16px"><div style="width:96px;height:120px;border-radius:12px;position:relative;overflow:hidden;flex:none;background:linear-gradient(#c9ced6,#8f97a3);display:flex;align-items:center;justify-content:center;font-size:48px">🙂<img src="IMG_0320.jpeg" alt="" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div><div style="flex:1"><div style="font-size:26px;font-weight:800">이재현</div><div style="color:#555;margin:4px 0 12px">신사업기획팀 · 대리</div><div style="font-size:12px;color:#888">사번</div><div style="font-weight:700;font-size:17px">09130808</div><div style="font-size:12px;color:#888;margin-top:8px">입사일</div><div style="font-weight:600">2021.03.02</div></div></div><div style="text-align:center;padding:6px 22px 24px">${QRS(7,170)}<div style="color:#1f3fb5;font-size:13px;margin-top:6px">QR 갱신까지 <b id="qrt">00:30</b></div></div></div>`;
  const mealCard=`<div class="idc"><div class="hd" style="background:linear-gradient(135deg,#1fa06c,#0b6b4a)"><b style="font-size:20px;letter-spacing:2px">식권</b><small>MEAL TICKET</small></div><div style="padding:18px 22px 4px;text-align:center"><div style="font-size:22px;font-weight:800">이재현</div><div style="color:#555;margin-top:3px;font-size:14px">신사업기획팀 · 대리 · 09130808</div></div><div style="text-align:center;padding:10px 22px 16px">${QRS(13,170)}<div style="color:#0b6b4a;font-size:13px;margin-top:6px">QR 갱신까지 <b id="qrt">00:30</b></div></div><div style="margin:0 18px 20px;background:#eaf6f0;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;color:#333">11월 식권 사용 횟수</span><b style="font-size:24px;color:#0b6b4a">14회</b></div></div>`;
  return `<div class="page" style="background:#eef2fb"><div class="top s"><span style="flex:1;font-weight:700;font-size:20px;margin-top:4px;color:#1f3fb5">모바일 사원증</span><span style="color:#1f3fb5">⋯</span></div><div class="body">${meal?mealCard:idCard}<div style="margin:14px 22px;display:flex;gap:10px">${meal?`<button style="flex:1;background:#fff;color:#1f3fb5;border-radius:14px;padding:14px;font-weight:600" data-a="stab" data-k="id">사원증</button><button style="flex:1;background:#0b6b4a;color:#fff;border-radius:14px;padding:14px;font-weight:600" data-a="toast" data-t="식권 QR을 리더기에 인식해 주세요">식권 사용</button>`:`<button style="flex:1;background:#1f3fb5;color:#fff;border-radius:14px;padding:14px;font-weight:600" data-a="toast" data-t="출입 인증이 완료되었습니다">출입 인증</button><button style="flex:1;background:#fff;color:#1f3fb5;border-radius:14px;padding:14px;font-weight:600" data-a="stab" data-k="meal">식권</button>`}</div></div></div>`},
 works(){const s=S.s;s.tab=s.tab||'h';
@@ -1099,7 +1099,7 @@ addEventListener('keydown',e=>{if(S.view!=='pin')return;if(/^\d$/.test(e.key))AC
 setInterval(()=>{status();if(S.view==='lock'){const t=kst(now());const tm=$('#lock .tm');if(tm)tm.textContent=`${t.h%12||12}:${String(t.mi).padStart(2,'0')}`}if(S.view==='home')renderHomeLite()},5000);
 function renderHomeLite(){const f=$('#fol');if(f&&f.className)return;renderHome()}
 /* ===== GQ 매거진 (사파리) ===== */
-const GQI=['IMG_0212.jpeg','IMG_0213.jpeg','IMG_0214.jpeg','IMG_0215.jpeg','IMG_0218.jpeg'];/* 매거진 이미지 5장: 이 파일명으로 넣으면 자동 적용 (0=상단, 1=인터뷰 후, 2·3=크로스, 4=마지막) */
+const GQI=['IMG_0212.jpeg','IMG_0332.jpeg','IMG_333.jpeg','IMG_0334.jpeg','IMG_0335.jpeg'];/* 매거진 이미지 5장: 이 파일명으로 넣으면 자동 적용 (0=상단, 1=인터뷰 후, 2·3=크로스, 4=마지막) */
 const GQ=[
 `T|GQ KOREA · AUGUST 2026|김영훈의 서른,/여전히 새로운 얼굴|MODEL · KIM YOUNGHOON`,
 `L|오래도록 카메라 앞에 서 온 남자. 익숙한 일상 속에서도 새로운 순간을 찾아내는 모델 김영훈과 나눈 이야기.`,
