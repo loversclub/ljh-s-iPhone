@@ -370,6 +370,43 @@ button,input{font:inherit;color:inherit}button{border:0;background:none;padding:
 .call .cscr{flex:1;margin-top:20px;min-height:70px}
 .call .cgrid{position:static!important;top:auto!important;margin:0 0 26px!important;flex:none}
 .call .ep{position:relative!important;left:auto!important;bottom:auto!important;margin:0 0 76px!important;flex:none}
+
+/* ===== v6: 모바일 사원증 ===== */
+.swpg{background:linear-gradient(#eef1fa,#f8f9fd)!important}
+.swtt{flex:1;font-size:24px;font-weight:800;letter-spacing:-.5px;color:#111}
+.swseg{display:flex;background:#e1e5f0;border-radius:12px;padding:3px;margin:4px 22px 16px}
+.swseg button{flex:1;padding:8px 0;border-radius:10px;font-size:14px;font-weight:600;color:#6b7385}.swseg button.on{background:#fff;color:#111;box-shadow:0 1px 4px #0002}
+.swc{margin:0 22px;border-radius:26px;background:#fff;box-shadow:0 14px 40px rgba(31,63,181,.16),0 2px 6px rgba(0,0,0,.04);overflow:hidden;color:#111}
+.swcap{position:relative;overflow:hidden;color:#fff;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,var(--a1),var(--a2))}
+.swcap::after{content:"";position:absolute;right:-40px;top:-60px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%)}
+.swlg{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:800;letter-spacing:1.2px;position:relative;z-index:1}
+.swlg i{width:26px;height:26px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;font-weight:900;color:var(--a1);letter-spacing:0}
+.swtag{font-size:10px;letter-spacing:2px;border:1px solid rgba(255,255,255,.45);border-radius:10px;padding:3px 9px;position:relative;z-index:1}
+.swpf{display:flex;gap:16px;padding:22px 22px 8px;align-items:center}
+.swp{position:relative;width:86px;height:108px;border-radius:20px;overflow:hidden;background:linear-gradient(#cfd4de,#98a1b0);display:flex;align-items:center;justify-content:center;font-size:42px;flex:none;box-shadow:0 4px 14px rgba(0,0,0,.14)}
+.swp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.swnm b{display:block;font-size:26px;font-weight:800;letter-spacing:-.5px}.swnm span{display:block;color:#666d7e;font-size:14px;margin-top:4px}
+.swnm em{display:inline-block;margin-top:10px;font-style:normal;font-size:11.5px;font-weight:700;color:var(--a1);background:var(--a3);border-radius:10px;padding:3px 10px}
+.swinfo{display:grid;grid-template-columns:1fr 1fr;margin:14px 22px 0;padding:14px 0;border-top:1px dashed #d9deea}
+.swinfo small{display:block;font-size:11.5px;color:#8a91a3;margin-bottom:3px}.swinfo b{font-size:16px;font-weight:700}
+.swqr{text-align:center;padding:4px 22px 22px}
+.swqr .qrb{display:inline-block;padding:12px;border:1px solid #e7eaf3;border-radius:20px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.06)}.swqr .qrb svg{display:block}
+.swtm{font-size:13px;color:#667;margin-top:12px}.swtm b{color:var(--a1);font-variant-numeric:tabular-nums}
+.swbar{height:4px;width:170px;background:#e7eaf3;border-radius:2px;margin:9px auto 0;overflow:hidden}.swbar i{display:block;height:100%;background:var(--a1);border-radius:2px;animation:swb 30s linear infinite}
+@keyframes swb{from{width:100%}to{width:0}}
+.swbtn{display:block;width:calc(100% - 44px);margin:18px 22px 0;height:54px;border-radius:16px;background:var(--a1);color:#fff;font-size:16px;font-weight:700;box-shadow:0 8px 20px var(--a4)}
+/* ===== v6: 전원 끄기 슬라이더 ===== */
+#pwr{position:absolute;inset:0;z-index:250;display:none;color:#fff;opacity:0;transition:opacity .35s ease;background:rgba(0,0,0,.5);-webkit-backdrop-filter:blur(34px) brightness(.62);backdrop-filter:blur(34px) brightness(.62)}
+#pwr.on{display:block}#pwr.vis{opacity:1}
+#pwr .sl{position:absolute;left:30px;right:30px;top:150px;height:76px;border-radius:38px;background:rgba(118,118,128,.38);overflow:hidden;transition:opacity .3s}
+#pwr .tx{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:58px;font-size:21px;font-weight:500;background:linear-gradient(90deg,rgba(255,255,255,.38) 0%,rgba(255,255,255,.38) 35%,#fff 50%,rgba(255,255,255,.38) 65%,rgba(255,255,255,.38) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:pshim 2.4s linear infinite;pointer-events:none}
+@keyframes pshim{from{background-position:150% 0}to{background-position:-100% 0}}
+#pwr .pk{position:absolute;left:6px;top:6px;width:64px;height:64px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab;box-shadow:0 2px 8px #0003}
+#pwr .cx{position:absolute;bottom:70px;left:0;right:0;text-align:center;font-size:20px;font-weight:500;color:#fff;transition:opacity .3s}
+#pwr .psp{position:absolute;left:50%;top:50%;width:42px;height:42px;margin:-21px 0 0 -21px;display:none}
+#pwr .psp i{position:absolute;left:19px;top:0;width:4px;height:11px;border-radius:2px;background:#fff;transform-origin:2px 21px;animation:pspin 1s steps(12) infinite}
+@keyframes pspin{from{opacity:1}to{opacity:.18}}
+#pwr.go .sl,#pwr.go .cx{opacity:0;pointer-events:none}#pwr.go .psp{display:block}
 /* ===== 설정 앱 (iOS 스타일) ===== */
 .sgrp{margin:0 16px 20px;background:#fff;border-radius:12px;overflow:hidden}
 .srow{position:relative;display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 12px 0 16px;font-size:17px;text-align:left;color:#000}
@@ -413,6 +450,7 @@ button,input{font:inherit;color:inherit}button{border:0;background:none;padding:
 </defs></svg>
 <div class="stage"><div class="phone lt" id="ph">
  <div class="wall"></div>
+ <div class="wall" id="hwall" style="opacity:0;transition:opacity .5s ease;background:linear-gradient(rgba(10,20,40,.06),rgba(10,20,40,.22)),url('IMG_0346.jpeg') center/cover no-repeat,url('IMG_0226.jpeg') center/cover no-repeat,linear-gradient(160deg,#5b7cff,#2a3a8a 55%,#101a3d)"></div>
  <div class="layer" id="home"></div>
  <div class="layer" id="app"></div>
  <div class="layer" id="lock"></div>
@@ -458,7 +496,7 @@ const ICO={
 ICO.instagram=()=>`<defs><radialGradient id="gIg" cx="10" cy="62" r="68" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fdf497"/><stop offset=".1" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset="1" stop-color="#285AEB"/></radialGradient></defs><rect width="60" height="60" fill="url(#gIg)"/><rect x="14" y="14" width="32" height="32" rx="9.5" fill="none" stroke="#fff" stroke-width="3.2"/><circle cx="30" cy="30" r="7.6" fill="none" stroke="#fff" stroke-width="3.2"/><circle cx="39.3" cy="20.7" r="2.1" fill="#fff"/>`;
 ICO.settings=()=>{const teeth=Array.from({length:8},(_,i)=>`<rect x="-4.2" y="-22" width="8.4" height="10" rx="2.2" fill="#e9eaee" transform="rotate(${i*45})"/>`).join('');return `<defs><linearGradient id="gSt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9acb4"/><stop offset="1" stop-color="#5c5f68"/></linearGradient><linearGradient id="gSg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f5f8"/><stop offset="1" stop-color="#cfd1d8"/></linearGradient></defs><rect width="60" height="60" fill="url(#gSt)"/><g transform="translate(30 30)">${teeth}<circle r="16" fill="url(#gSg)"/><circle r="9.5" fill="#6a6d76"/><circle r="6.4" fill="none" stroke="#9fa2ab" stroke-width="1.4"/><circle r="3" fill="#4a4d55"/></g>`};
 /* 공식 아이콘 PNG를 아래 경로에 넣으면 그림 아이콘 대신 자동 적용됩니다 (파일이 없으면 SVG 아이콘 유지) */
-const IMGS={baemin:'icons/baemin.png',coupang:'icons/coupangeats.png',ddang:'icons/ddangyo.png',mc:'icons/mcdonalds.png',messages:'icons/messages.png',instagram:'icons/instagram.png'};
+const IMGS={baemin:'icons/baemin.png',coupang:'icons/coupangeats.png',ddang:'icons/ddangyo.png',mc:'icons/mcdonalds.png',messages:'icons/messages.png',instagram:'icons/instagram.png',maps:'icons/maps.png',photos:'icons/photos.png',music:'icons/music.png',kakao:'icons/kakao.png'};
 const ICX=['png','jpeg','jpg','JPG','JPEG','PNG'];function icErr(im){const i=+im.dataset.i+1;if(i<ICX.length){im.dataset.i=i;im.src=im.dataset.b+'.'+ICX[i]}else im.remove()}
 const ic=(id,s=60)=>`<span class="ai" style="${typeof s==='number'?`width:${s}px;height:${s}px`:'width:100%;height:100%'}"><svg viewBox="0 0 60 60">${ICO[id]()}</svg>${IMGS[id]?`<img src="${IMGS[id]}" data-b="${IMGS[id].replace(/\.png$/,'')}" data-i="0" alt="" draggable="false" onerror="icErr(this)">`:''}</span>`;
 const AP={phone:['전화'],messages:['메시지'],kakao:['카카오톡'],youtube:['YouTube'],calendar:['캘린더'],clock:['시계'],notes:['메모'],stocks:['증권',1],maps:['지도'],photos:['사진'],safari:['Safari'],music:['음악'],baemin:['배달의민족'],coupang:['쿠팡이츠'],ddang:['땡겨요'],mc:['맥도날드'],sawon:['모바일사원증'],works:['웍스'],instagram:['Instagram'],settings:['설정']};
@@ -589,6 +627,23 @@ const KR={
 >근데 너희팀 과장 메일로 악플은 보내도돼?
 <ㅋㅋㅋㅋㅋㅋ
 `],
+['2026-10-09 10:08',`
+<자기야
+<이것봐
+<나 자고 일어났는데
+<머리가 이래..
+>IMG_0343.jpeg
+>ㅋㅋㅋㅋㅋㅋㅋㅋ
+>짜파게티다
+<ㅠㅠ
+<매직 한 번 더 할까
+>아니
+>하지마
+>내가 말했자낭
+>넌 그게 매력이야
+>담번에 해
+<웅ㅎㅎ
+`],
 ['2026-10-12 13:47',`
 >너 내 기사에 멀 누르고 다니는거야
 <나?
@@ -611,6 +666,23 @@ const KR={
 <놀랬어? ㅋㅋ
 <근데 장난으로 하는 말 아니고 
 <진심이야
+`],
+['2026-10-19 22:21',`
+>IMG_0344.jpeg
+>나잠다!!
+<ㅋㅋ
+<왤케 일찍자
+>낼 일찍 촬영이라 8시부터 현장 가야돼...
+>쳇
+<그럼 사진 하나 더 보내고 자
+>다 별루야 얼굴
+>지금 부었어
+<ㅃㄹ
+>IMG_0318.jpeg
+<ㅋㅋㅋ
+<귀엽다
+<잘자 영후나
+>너두우
 `],
 ['2026-10-28 09:30',`
 <영후나
@@ -639,7 +711,12 @@ const KR={
 <그랴
 +30
 >ㅋㅋㅋㅋㅋㅋ
->사랑해 보고싶당
+>사랑해 보고싶어
+<간다
+>응?
+>야
+>이재현 !!
+>너 낼 출근이잖아 !!
 `],
 ['2026-11-20 17:44',`
 >나 방금 도착했당
@@ -647,9 +724,9 @@ const KR={
 <15분 정도 걸려
 <1층 카페에 있어ㅎㅎ
 >웅
-<뛰어감ㅋㅋ
->ㅋㅋ
-<달려감~ ㅋㅋ
+<간다ㅋㅋ
+>ㅋㅋㅋㅋㅋㅋㅋ
+<달려감~
 `]]))},
  mom:{n:'엄마',e:'👩',u:0,msgs:kbuild([
 ['2026-10-12 08:39',`
@@ -826,7 +903,7 @@ const sv=(k,fill)=>`<svg viewBox="0 0 24 24"${fill?' style="fill:currentColor"':
 const bk=(l,a='back')=>`<button class="bk" data-a="${a}"><svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="#007aff" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L2 10l8 8"/></svg>${l}</button>`;
 const tabs=(arr,cur,a)=>`<div class="tabs">${arr.map(([k,l,i])=>`<button class="${cur===k?'on':''}" data-a="${a}" data-k="${k}">${sv(i)}${l}</button>`).join('')}</div>`;
 const NF=n=>Number(n).toLocaleString('en-US');
-const IGU={'_0hoony':['IMG_0191.jpeg','IMG_0191.jpeg'],'leejaehyun0913':['IMG_0195.jpeg','IMG_0195.jpeg'],'GQ.KOREA':[null,'GQ'],'changmin_':[null,'👤'],'dhaidlap':[null,'👤'],'seoul.dateplace':[null,'🌆'],'jaehoon152':[null,'👤'],'sunwoo':[null,'👤'],'96kim___inhwan':[null,'👤'],'guitarking':[null,'👤'],'casting_agency':[null,'🎬'],'dhshdip':[null,'👤']};
+const IGU={'_0hoony':['IMG_0191.jpeg','IMG_0191.jpeg'],'leejaehyun0913':['IMG_0195.jpeg','IMG_0195.jpeg'],'GQ.KOREA':[null,'GQ'],'changmin_':['IMG_0287.jpeg','👤'],'dhaidlap':[null,'👤'],'seoul.dateplace':[null,'🌆'],'jaehoon152':[null,'👤'],'sunwoo':['IMG_0286.jpeg','👤'],'juyeonlee':['IMG_0288.jpeg','👤'],'96kim___inhwan':[null,'👤'],'guitarking':[null,'👤'],'casting_agency':[null,'🎬'],'dhshdip':[null,'👤']};
 const IGP={
  a:{u:'_0hoony',img:'IMG_0200.jpeg',em:'IMG_0200.jpeg',c:'생일 축하해주셔서 감사합니다😊🎂',l:5826,n:457,d:'8월 8일',cm:[['leejaehyun0913','생축 빵아ㅎㅎ'],['changmin_','형 생일축하해~']]},
  g:{u:'GQ.KOREA',img:'IMG_0212.jpeg',em:'📰',c:'지큐 GQ Korea 2026. 8월호는 모델 김영훈(_0hoony)과 함께합니다.',l:3137,n:201,d:'',cm:[['seo_yeonlee','와 얼굴 개미쳤다...'],['king_hoon','인터뷰 너무 좋아요']]},
@@ -854,8 +931,8 @@ const igimg=p=>`<div class="igi"><span>${emj(p.em)}</span><img src="${p.img}" al
 function igpostH(k,s){const p=IGP[k],on=!!s.lk[k];return `<div class="igp"><div class="igph">${igav(p.u,34)}<b>${igl(p.u)}</b><span style="margin-left:auto;letter-spacing:1px">•••</span></div>${p.imgs?igcar(k,p):igimg(p)}<div class="iga"><button class="${on?'liked':''}" data-a="iglike" data-k="${k}">${IGS.heart(on)}</button>${IGS.comment}${IGS.send}${p.imgs?`<div class="igdots" id="igd${k}">${p.imgs.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div>`:''}<span style="margin-left:auto;display:flex">${IGS.save}</span></div><div class="igl"><b id="lkn${k}">좋아요 ${NF(lc(k,on))}개</b></div><div class="igc"><b>${igl(p.u)}</b> ${E(p.c)}</div>${p.n?`<div class="igm">댓글 ${p.n}개 모두 보기</div>`:''}${p.cm.map(([u,t])=>`<div class="igc"><b>${igl(u)}</b> ${E(t)}</div>`).join('')}${p.d?`<div class="igd">${p.d}</div>`:'<div style="height:12px"></div>'}</div>`}
 function QRS(seed,sz){let o='',r=seed;for(let y=0;y<21;y++)for(let x=0;x<21;x++){const f=(x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13);let on;if(f){const a=x<7?x:x-14,b=y<7?y:y-14;on=a===0||a===6||b===0||b===6||(a>=2&&a<=4&&b>=2&&b<=4)}else{r=(r*1103515245+12345)&0x7fffffff;on=(r>>16)&1}if(on)o+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}return `<svg width="${sz}" height="${sz}" viewBox="0 0 21 21" shape-rendering="crispEdges">${o}</svg>`}
 /* ===== 인스타그램 추가 데이터 ===== */
-IGP.k1027={u:'_0hoony',img:'IMG_0281.jpeg',em:'🌉',c:'즐겨🌉',l:4729,n:265,d:'10월 27일',cm:[['seo_yeonlee','오빠 전게시글에 반지 뭐냐고 나 집착광공 만들지말고 오빠!!!!!'],['leejaehyun0913','누가 찍어줬냐 잘 찍었네']]};
-IGP.k915={u:'_0hoony',img:'IMG_0256.jpeg',em:'☺️',imgs:[['IMG_0256.jpeg','☺️'],['IMG_0302.jpeg','🙂']],c:'☺️',l:6816,n:827,d:'9월 15일',cm:[['changmin_','왐마야~..'],['seo_yeonlee','중간에 뭐야 오빠?']]};
+IGP.k1027={u:'_0hoony',img:'IMG_0281.jpeg',em:'🌉',c:'즐겨🌉',l:4729,n:265,d:'10월 27일',cm:[['seo_yeonlee','오빠. 전게시글에 반지 뭐냐고 나 집착광공 만들지말고 오빠!!!!!'],['leejaehyun0913','누가 찍어줬어 잘 찍었네ㅋㅋ']]};
+IGP.k915={u:'_0hoony',img:'IMG_0256.jpeg',em:'☺️',imgs:[['IMG_0256.jpeg','☺️'],['IMG_0302.jpeg','🙂']],c:'☺️',l:6816,n:827,d:'9월 15일',cm:[['changmin_','왐마야~..'],['seo_yeonlee','두 번째 사진 뭐야?']]};
 IGP.k918={u:'_0hoony',img:'IMG_0256.jpeg',em:'💌',c:'💌',l:5120,n:310,d:'9월 18일',cm:[]};
 IGP.k1017={u:'leejaehyun0913',img:'IMG_0278.jpeg',em:'🌇',imgs:[['IMG_0278.jpeg','🌇'],['IMG_0280.jpeg','🌆'],['IMG_0277.jpeg','🌃'],['IMG_0275.jpeg','🏙️'],['IMG_0279.jpeg','🌉']],c:'일상',l:615,n:25,d:'10월 17일',cm:[['sunwoo','왐마야~'],['seo_yeonlee','네... 나 다 알아들엇긔']]};
 const PROF={'_0hoony':'hoony','leejaehyun0913':'profile'};
@@ -863,28 +940,28 @@ const igl=u=>PROF[u]?`<button class="igu" data-a="igu" data-u="${u}">${E(u)}</bu
 const rel=ts=>{const ms=now().getTime()-cts(ts),d=Math.floor(ms/864e5);if(d<1)return Math.max(1,Math.floor(ms/36e5))+'시간';if(d<7)return d+'일';if(d<30)return Math.floor(d/7)+'주';return Math.floor(d/30)+'개월'};
 const AD=`<div class="igp"><div class="igph"><div class="igav" style="width:34px;height:34px;background:#111;font-weight:800;font-size:13px"><span>D</span></div><div><b>dailymode_official</b><small style="display:block;color:#737373;font-size:12px;line-height:1.2">광고</small></div><span style="margin-left:auto;letter-spacing:1px">•••</span></div><div class="igi" style="flex-direction:column;gap:10px;background:linear-gradient(135deg,#1c1c1e,#4b4b55);color:#fff"><span style="font-size:13px;letter-spacing:4px;opacity:.8">DAILY MODE</span><span style="font-size:38px;font-weight:800;letter-spacing:1px">WINTER SALE</span><span style="font-size:20px;font-weight:300">아우터 최대 70% 할인</span></div><div class="igcta"><span>지금 쇼핑하기</span><span>›</span></div><div class="iga"><button>${IGS.heart(0)}</button>${IGS.comment}${IGS.send}<span style="margin-left:auto;display:flex">${IGS.save}</span></div><div class="igl"><b>좋아요 12,408개</b></div><div class="igc"><b>dailymode_official</b> 겨울 신상 아우터 단독 특가 ❄️ 오늘 하루만 최대 70% 할인!</div><div class="igd">광고</div></div>`;
 const DMT={
- '_0hoony':{nm:'김영훈',rd:1,T:[{sep:'2026년 7월 19일'},{w:'th',sh:'j2'},{w:'th',t:'누가 찍어줬어? 귀엽당'},{w:'me',t:'너가 찍었잖아 ㅋㅋ'},{w:'th',t:'알고 물어본 거임😊😊'},{w:'me',t:'ㅋㅋㅋㅋㅋㅋㅋㅋ'},{sep:'8월 8일 오후 9:21'},{w:'me',sh:'a'},{w:'me',t:'잘 나왔네 ㅋㅋ'},{w:'th',t:'좋아요 눌러 !!'},{w:'me',t:'이미 눌렀어ㅋㅋ 두 번 누르고 싶은거 참았고'},{w:'th',t:'ㅎㅎ'},{sep:'10월 27일 오후 9:15'},{w:'me',sh:'k918'},{w:'me',t:'이거 근데 잘 나온 거 같아'},{w:'me',t:'귀여워 ㅋㅋ'},{w:'th',t:'저때 너 표정 진짜 웃겼어'},{w:'me',t:'그랴? ㅋㅋ'},{w:'th',t:'갑자기 뭔 편지를 낭독한다고 하질 않나'},{w:'me',t:'ㅋㅋㅋㅋ'},{w:'me',t:'그건 비밀로 해줘 영훈아'}]},
+ '_0hoony':{nm:'김영훈',rd:1,T:[{sep:'2026년 7월 19일'},{w:'th',sh:'j2'},{w:'th',t:'누가 찍어줬어? 귀엽당'},{w:'me',t:'너가 찍었잖아 ㅋㅋ'},{w:'th',t:'알고 물어본 거임😊😊'},{w:'me',t:'ㅋㅋㅋㅋㅋㅋㅋㅋ'},{sep:'8월 8일 오후 9:21'},{w:'me',sh:'a'},{w:'me',t:'잘 나왔네 ㅋㅋ'},{w:'th',t:'좋아요 눌러 !!'},{w:'me',t:'이미 눌렀어ㅋㅋ 두 번 누르고 싶은거 참았고'},{w:'th',t:'ㅎㅎ'},{sep:'10월 27일 오후 9:15'},{w:'me',sh:'k918'},{w:'me',t:'이거 근데 잘 나온 거 같아'},{w:'me',t:'귀여워 ㅋㅋ'},{w:'th',t:'저때 너 표정 진짜 웃겨서 웃참했어'},{w:'me',t:'그랴? ㅋㅋ'},{w:'th',t:'갑자기 뭔 편지를 낭독한다고 하질 않나'},{w:'me',t:'ㅋㅋㅋㅋ'},{w:'me',t:'그건 비밀로 해줘 영훈아ㅠㅠ'}]},
  'dhshdip':{T:[{sep:'9월 15일 오후 6:47'},{w:'th',t:'저기요'},{sep:'9월 15일 오후 8:15'},{w:'th',t:'그쪽 인플루언서가 꿈이신가?ㅋㅋ'}]},
- 'casting_agency':{T:[{sep:'11월 12일 오후 3:10'},{w:'th',t:'안녕하세요! 갑작스러운 DM 죄송합니다.\n\n저희는 [songdoz 에이전시]이며, 우연히 재현님의 인스타그램을 보게 되었는데 이미지와 분위기가 인상 깊어 연락드리게 되었습니다.\n\n현재 준비 중인 작품과 관련해 출연 제안을 드리고 싶은데, 혹시 배우 캐스팅 관련 연락을 받아보실 의향이 있으실까요?\n\n관심 있으시다면 작품 관련 내용을 자세히 전달드리겠습니다. 감사합니다 :)'},{w:'me',t:'따로 생각없습니다 ㅎㅎ'},{w:'th',t:'앗.. 정말정말 배우상이신데... 한 번만 고민을....'}]},
- 'sunwoo':{T:[{sep:'8월 9일 오후 10:04'},{w:'th',sh:'j1'},{w:'th',t:'웩'},{w:'me',t:'ㅋㅋ'},{w:'me',t:'까분다'},{sep:'9월 15일 오후 11:38'},{w:'th',sh:'k915'},{w:'th',t:'쌍반지 실화?'},{w:'me',t:'양손에 낄거임ㅋㅋ'},{w:'th',t:'오우ㅋㅋ'},{w:'th',t:'쇼미더머니 나가는 건 어때 형'},{w:'th',t:'비트 하나 맛있게 찍어드릴게'}]},
- 'juyeonlee':{T:[{sep:'9월 16일 오후 2:04'},{w:'th',t:'형 미안'},{w:'me',t:'왜'},{w:'th',t:'영훈이형도 반지 물어봤었는데 걍 말해줄 걸'},{w:'me',t:'ㅋㅋㅋㅋㅋ'},{w:'me',t:'ㄱㅊ'},{w:'th',t:'몰카인 줄 알았어'},{w:'me',t:'덕분에 웃겼으니 됐다'}]},
- 'tmscksdl175':{T:[{sep:'7월 19일 오후 8:23'},{w:'th',t:'얌마 ㅋㅋ 잘 지내냐'},{w:'th',t:'통 연락이 없냐?'},{w:'th',t:'와꾸도 멀쩡해가지고 여자 만난다는 소문도 없고 너는 ㅋㅋ'},{sep:'8월 25일 오후 9:19'},{w:'th',t:'야 뭐냐'},{w:'th',t:'씹냐?'},{w:'me',t:'오랜만이네'},{w:'th',t:'씹은 줄 알앗네 ㅋㅋ'},{w:'me',t:'씹은 거 맞는데'},{w:'th',t:'?'},{w:'me',t:'내가 누굴 만나건 신경끄고'},{w:'th',t:'야 ㅅㅂ 걍 안부인사잖아'},{w:'me',t:'할 말 없으니까 그만보내도 될 거 같은데ㅋㅋ'},{w:'th',t:'야'},{sys:'사용자가 차단되었습니다'}]}
+ 'casting_songdozagency':{T:[{sep:'11월 12일 오후 3:10'},{w:'th',t:'안녕하세요! 갑작스러운 DM 죄송합니다.\n\n저희는 [songdoz 에이전시]이며, 우연히 재현님의 인스타그램을 보게 되었는데 이미지와 분위기가 인상 깊어 연락드리게 되었습니다.\n\n현재 준비 중인 작품과 관련해 출연 제안을 드리고 싶은데, 혹시 배우 캐스팅 관련 연락을 받아보실 의향이 있으실까요?\n\n관심 있으시다면 작품 관련 내용을 자세히 전달드리겠습니다. 감사합니다 :)'},{w:'me',t:'따로 생각없습니다 ㅎㅎ'},{w:'th',t:'정말정말 배우상이신데... 한 번만 고민을....'}]},
+ 'sunwoo':{T:[{sep:'8월 9일 오후 10:04'},{w:'th',sh:'j1'},{w:'th',t:'웩'},{w:'me',t:'ㅋㅋㅋ'},{w:'me',t:'까분다'},{sep:'9월 15일 오후 11:38'},{w:'th',sh:'k915',si:1},{w:'th',t:'ㄷㄷ 쌍반지 실화?'},{w:'me',t:'양손에 낄거임ㅋㅋ'},{w:'th',t:'오우ㅋㅋ'},{w:'th',t:'쇼미더머니 나가는 건 어때 형'},{w:'th',t:'비트 하나 맛있게 찍어드림'}]},
+ 'juyeonlee':{T:[{sep:'9월 16일 오후 2:04'},{w:'th',t:'형 미안'},{w:'me',t:'왜'},{w:'th',t:'영훈이형도 반지 물어봤었는데 그때 말해줄 걸'},{w:'me',t:'ㅋㅋㅋㅋㅋ'},{w:'me',t:'ㄱㅊ'},{w:'th',t:'몰카인 줄 알았어'},{w:'me',t:'웃겼으니 됐다ㅋㅋ'}]},
+ 'tmscksdl175':{T:[{sep:'7월 19일 오후 8:23'},{w:'th',t:'얌마 ㅋㅋ 잘 지내냐'},{w:'th',t:'통 연락이 없냐?'},{w:'th',t:'와꾸도 멀쩡해가지고 여자 만난다는 소문도 없고 너는 ㅋㅋ'},{sep:'8월 25일 오후 9:19'},{w:'th',t:'야 뭐냐'},{w:'th',t:'씹냐?'},{w:'me',t:'오랜만이네'},{w:'th',t:'씹은 줄 알앗네 ㅋㅋ'},{w:'me',t:'씹은 거 맞는데'},{w:'th',t:'?'},{w:'me',t:'내가 누굴 만나건 신경끄고'},{w:'th',t:'야 ㅅㅂ 걍 안부인사잖아'},{w:'me',t:'그만보내도 될 거 같은데ㅋㅋ'},{w:'th',t:'ㅅㅂ 야'},{sys:'사용자가 차단되었습니다'}]}
 };
 const DMS=[
- {u:'_0hoony',p:'그건 비밀로 해줘 영훈아',ts:'2026-10-27 21:20',o:1},
- {u:'casting_agency',p:'앗.. 정말정말 배우상이신데... 한 번만 고민을....',ts:'2026-11-12 15:40',o:1},
+ {u:'_0hoony',p:'그건 비밀로 해줘 영훈아ㅠㅠ',ts:'2026-10-27 21:20',o:1},
+ {u:'casting_agency',p:'정말정말 배우상이신데... 한 번만 고민을....',ts:'2026-11-12 15:40',o:1},
  {u:'sunwoo',p:'비트 하나 맛있게 찍어드릴게',ts:'2026-09-15 23:42',o:1},
  {u:'dhshdip',p:'그쪽 인플루언서가 꿈이신가?ㅋㅋ',ts:'2026-09-15 20:15',o:1},
- {u:'juyeonlee',p:'덕분에 웃겼으니 됐다',ts:'2026-09-16 14:20',o:1},
- {u:'tmscksdl175',p:'야',ts:'2026-08-25 21:30',o:1},
+ {u:'juyeonlee',p:'웃겼으니 됐다ㅋㅋ',ts:'2026-09-16 14:20',o:1},
+ {u:'tmscksdl175',p:'ㅅㅂ 야',ts:'2026-08-25 21:30',o:1},
  {u:'minjun_0420',p:'게시물을 보냈습니다.',ts:'2026-07-03 13:11',un:1},
  {u:'yoon.seo_9',p:'잘 지내?',ts:'2026-07-27 22:40',un:1},
  {u:'dohyeon.k',p:'너 왜 연락 안 보냐ㅋㅋ',ts:'2026-08-14 18:05',un:1},
  {u:'hana_0611',p:'게시물을 보냈습니다.',ts:'2026-09-02 09:50',un:1},
  {u:'j_hyunwoo88',p:'잘 지내?',ts:'2026-09-21 20:15',un:1},
- {u:'soobin_lee_',p:'너 왜 연락 안 보냐ㅋㅋ',ts:'2026-10-08 12:30',un:1},
+ {u:'soobin_lee_',p:'하이여 잘지냄?',ts:'2026-10-08 12:30',un:1},
  {u:'taehyung.lee_7',p:'게시물을 보냈습니다.',ts:'2026-10-30 23:02',un:1},
- {u:'chaeyoung__x',p:'잘 지내??',ts:'2026-11-09 17:25',un:1}];
+ {u:'chaeyoung__x',p:'ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ',ts:'2026-11-09 17:25',un:1}];
 const R={
 phone(){const s=S.s;s.tab=s.tab||'recent';
  if(s.call){const sc=SCR[s.sk||s.call],ln=s.li!=null&&sc?sc[s.li]:null,ct=s.ending?'통화 종료':s.callOn?cfmt(Date.now()-s.callOn):'발신 중...',first=!s.cin;s.cin=1;
@@ -947,11 +1024,11 @@ baemin(){const s=S.s;s.tab=s.tab||'home';let body;
  <div class="bmc"><div style="font-size:16px;font-weight:800;color:#111;margin-bottom:6px">내 정보</div><div class="bmi"><span>이름</span><small>이재현</small></div><div class="bmi"><span>닉네임</span><small>이재현</small></div><div class="bmi"><span>휴대폰 번호</span><small>010-◼️◼️◼️◼️-◼️◼️◼️◼️</small></div><div class="bmi"><span>이메일</span><small>◼️◼️◼️◼️@naver.com</small></div></div></div>`;
  else body=`<div class="bz" style="padding:12px 16px 18px"><div style="font-size:19px;font-weight:800"><span style="display:inline-flex;align-items:center;gap:6px">서울특별시 ○○구 ○○동 ${CHV(17,'#fff')}</span></div><div style="margin-top:14px;background:#fff;border-radius:12px;padding:12px 14px;color:#999;font-size:15px">지금 뭐 먹고 싶어?</div></div><div class="cat">${[['🍚','한식'],['🥟','중식'],['🍗','치킨'],['🍕','피자'],['🥩','족발·보쌈'],['🍢','분식'],['🍱','돈까스·회'],['☕','카페'],['🍔','패스트푸드'],['🥗','샐러드']].map(c=>`<div><span>${c[0]}</span>${c[1]}</div>`).join('')}</div><div style="background:#f4f4f6;padding:12px"><div style="background:linear-gradient(135deg,#2ac1bc,#6ee7d9);border-radius:16px;padding:20px;color:#fff;font-size:18px;font-weight:800;line-height:1.35">오늘 점심 뭐 먹지?<br><small style="font-weight:500;font-size:13px">배민1 무료배달 가게 모아보기</small></div><div style="margin-top:12px;font-weight:700;font-size:16px;color:#111">자주 시킨 가게</div>${[ORD[3],ORD[2],ORD[4]].map(o=>`<div class="ord" style="border-radius:12px;margin:8px 0">${E(o[0])}<br><small>${o[1]}</small></div>`).join('')}</div>`;
  return `<div class="page bzp" style="background:#fff"><div class="body" style="padding:0">${body}</div><div class="tabs">${[['home','홈','home'],['shop','장보기·쇼핑','cart'],['zzim','찜','heart'],['order','주문내역','list'],['my','마이배민','user']].map(([k,l,i])=>`<button class="${s.tab===k?'on':''}" style="${s.tab===k?'color:#2ac1bc':''}" ${['home','order','my'].includes(k)?`data-a="btab" data-k="${k}"`:''}>${sv(i)}${l}</button>`).join('')}</div></div>`},
-maps(){const s=S.s;if(!s.rec)s.rec=['성수다락','■■■ 호텔','■■■ 공원','투썸플레이스','진진차이나','미엘','■■■ 호텔'];
+maps(){const s=S.s;if(!s.rec)s.rec=['성수다락','OOO 호텔','OOO 공원','투썸플레이스','진진차이나','미엘','OOO 호텔','서울앵무새'];
  if(s.sf)return `<div class="page" style="background:#fff"><div style="display:flex;gap:12px;align-items:center;padding:2px 14px 10px;flex:none"><div class="sfq" style="margin:0;flex:1;background:#eeeef0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input id="msi" placeholder="지도 검색" autocomplete="off" oninput="msF(this.value)"></div><button data-a="msclose" style="color:#007aff;font-size:17px">취소</button></div><div class="body" id="msl">${msList(s.rec,'')}</div></div>`;
  const wh='fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
  const fav=[['집','#34c759',`<svg width="26" height="26" viewBox="0 0 24 24" ${wh}><path d="M3.5 11 12 3.5l8.5 7.500V20a1 1 0 0 1-1 1H15v-6H9v6H4.500a1 1 0 0 1-1-1z"/></svg>`],['회사','#007aff',`<svg width="26" height="26" viewBox="0 0 24 24" ${wh}><rect x="5" y="3" width="14" height="18" rx="1.500"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg>`],['영훈이집','#ff375f',`<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 21S3 14.600 3 8.700C3 5.900 5.100 4 7.500 4c1.700 0 3.400 1 4.500 2.600C13.100 5 14.800 4 16.500 4 18.900 4 21 5.900 21 8.700 21 14.600 12 21 12 21z"/></svg>`]];
- const sv2=[['맛집',153,'#ff9500'],['영훈이가 잘 먹던 거',24,'#ff375f'],['강릉',14,'#34c759'],['부산',16,'#007aff']];
+ const sv2=[['맛집',153,'#ff9500'],['영훈이 픽',24,'#ff375f'],['강릉',14,'#34c759'],['부산',16,'#007aff']];
  return `<div class="page nosp" style="background:#eae6dc"><svg class="mapv" viewBox="0 0 402 874" preserveAspectRatio="xMidYMid slice"><rect width="402" height="874" fill="#efeae0"/><rect x="0" y="500" width="402" height="110" fill="#a9d4f5"/><rect x="236" y="130" width="150" height="120" rx="12" fill="#c3e6ab"/><rect x="24" y="270" width="120" height="90" rx="10" fill="#c3e6ab"/><g stroke="#fff" stroke-width="13" fill="none"><path d="M-10 230L420 360"/><path d="M110 -10L190 640"/><path d="M300 -10L260 640"/><path d="M-10 420L420 400"/></g><path d="M-10 230L420 360" stroke="#fbd96a" stroke-width="4" fill="none"/><g stroke="#fff" stroke-width="5" fill="none"><path d="M0 150L400 120"/><path d="M40 -10L70 640"/><path d="M360 -10L380 640"/><path d="M0 330L400 300"/></g><g transform="translate(205 335)"><circle r="26" fill="#0a84ff" opacity=".18"/><circle r="9" fill="#0a84ff" stroke="#fff" stroke-width="3.500"/></g></svg>
  <button class="msb" data-a="msopen"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2.400" stroke-linecap="round"><circle cx="10.500" cy="10.500" r="6.500"/><path d="M15.500 15.500L21 21"/></svg><span style="flex:1">지도 검색</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
  <div class="sheetm${s.shd?' dn':''}" style="height:auto;padding-bottom:44px"><div class="gr"></div><div class="msh" style="margin-top:2px">즐겨찾기</div><div class="mfav">${fav.map(f=>`<button data-a="none"><span style="background:${f[1]}">${f[2]}</span>${f[0]}</button>`).join('')}</div><div class="msh" style="margin-top:20px">저장한 장소</div>${sv2.map(r=>`<button class="mrow" data-a="none"><span class="mi2" style="background:${r[2]}"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 3.500l2.600 5.400 5.900.8-4.300 4.100 1 5.900L12 16.900 6.800 19.700l1-5.900L3.500 9.700l5.900-.8z"/></svg></span><span style="flex:1"><b>${E(r[0])}</b><small>${r[1]}개 장소</small></span><span style="color:#c7c7cc;font-size:20px">›</span></button>`).join('')}<div class="msh" style="margin-top:20px">최근 간 장소</div><button class="mrow" data-a="none"><span class="mi2" style="background:#ff375f"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 21S3 14.6 3 8.7C3 5.9 5.1 4 7.5 4c1.7 0 3.4 1 4.5 2.6C13.1 5 14.8 4 16.5 4 18.9 4 21 5.9 21 8.7 21 14.6 12 21 12 21z"/></svg></span><span style="flex:1"><b>영훈이집</b><small>11. 17. 방문</small></span><span style="color:#c7c7cc;font-size:20px">›</span></button></div></div>`},
@@ -967,7 +1044,7 @@ photos(){const s=S.s;s.tab=s.tab||'alb';
  const tb=[['lib','보관함','img',0],['fav','즐겨찾는 항목','heart',1],['alb','앨범','folder',1],['sr','검색','search',0]];
  return `<div class="page">${top}<div class="body">${body}</div><div class="tabs">${tb.map(([k,l,i,on])=>`<button class="${s.tab===k?'on':''}" ${on?`data-a="phtab" data-k="${k}"`:''}>${sv(i)}${l}</button>`).join('')}</div></div>`},
 safari(){const s=S.s;if(s.web)return gqView(s);
- return `<div class="page" style="background:#f2f2f7"><div class="body"><div style="padding:12px 20px 14px;font-size:30px;font-weight:700">자주 방문한 사이트</div><div class="fav">${[['N','#03c75a','네이버'],['G','#4285f4','구글'],['▶','#f00','YouTube'],['GQ','#111','GQ코리아 8월호 바로가기','gq'],['김','#03c75a','네이버 검색결과 : 김영훈 - 네이버 검색','nv'],['무','#222','무신사'],['오','#34c3d8','오늘의집'],['W','#00dc64','웹툰']].map(f=>`<div data-a="${f[3]||'sq'}" data-q="${f[2]}"><span style="position:relative;background:${f[1]}">${f[0]}${f[3]?'<i class="fst">★</i>':''}</span><em class="fl">${f[2]}</em></div>`).join('')}</div>${s.q?`<div class="card" style="background:#fff"><b style="color:#03c75a">NAVER</b><div style="font-size:18px;margin:8px 0">${E(s.q)}</div><small style="color:#8e8e93">통합검색 · 블로그 · 이미지 · 카페 · 지식iN</small></div>`:''}<div style="padding:14px 20px 4px;font-weight:700;font-size:17px">최근 검색어</div>${['맛집 추천','스드메가 뭔가요','서울 야경 데이트 코스','롤 챔스 경기 일정','한정선 웨이팅','크리스마스 명소 추천'].map(t=>`<div class="row" style="background:#fff" data-a="sq" data-q="${t}"><span style="color:#8e8e93">⌕</span><div class="t">${t}</div></div>`).join('')}</div><form class="sfq" data-form="sf" style="margin:0 14px 8px;flex:none;background:#fffe;box-shadow:0 2px 10px #0002">${sv('search').replace('<svg','<svg width="17" height="17" fill="none" stroke="#8e8e93" stroke-width="2.200"')}<input name="q" placeholder="검색 또는 웹사이트 이름 입력" autocomplete="off"></form><div style="height:30px;flex:none"></div></div>`},
+ return `<div class="page" style="background:#f2f2f7"><div class="body"><div style="padding:12px 20px 14px;font-size:30px;font-weight:700">자주 방문한 사이트</div><div class="fav">${[['N','#03c75a','네이버'],['G','#4285f4','구글'],['▶','#f00','YouTube'],['GQ','#111','GQ코리아 8월호 바로가기','gq'],['김','#03c75a','네이버 검색결과 : 김영훈 - 네이버 검색','nv'],['무','#222','무신사'],['오','#34c3d8','오늘의집'],['W','#00dc64','웹툰']].map(f=>`<div data-a="${f[3]||'sq'}" data-q="${f[2]}"><span style="position:relative;background:${f[1]}">${f[0]}${f[3]?'<i class="fst">★</i>':''}</span><em class="fl">${f[2]}</em></div>`).join('')}</div>${s.q?`<div class="card" style="background:#fff"><b style="color:#03c75a">NAVER</b><div style="font-size:18px;margin:8px 0">${E(s.q)}</div><small style="color:#8e8e93">통합검색 · 블로그 · 이미지 · 카페 · 지식iN</small></div>`:''}<div style="padding:14px 20px 4px;font-weight:700;font-size:17px">최근 검색어</div>${['맛집 추천','스드메가 뭔가요','인천 송도 상견례 한정식','서울 야경 데이트 코스','롤 챔스 경기 일정','한정선 웨이팅','크리스마스 명소 추천'].map(t=>`<div class="row" style="background:#fff" data-a="sq" data-q="${t}"><span style="color:#8e8e93">⌕</span><div class="t">${t}</div></div>`).join('')}</div><form class="sfq" data-form="sf" style="margin:0 14px 8px;flex:none;background:#fffe;box-shadow:0 2px 10px #0002">${sv('search').replace('<svg','<svg width="17" height="17" fill="none" stroke="#8e8e93" stroke-width="2.200"')}<input name="q" placeholder="검색 또는 웹사이트 이름 입력" autocomplete="off"></form><div style="height:30px;flex:none"></div></div>`},
 music(){const s=S.s;if(s.i==null)s.i=0,s.p=1;const cur=MUS[s.i];
  return `<div class="page mus"><div class="top"><h1>지금 듣기</h1><div class="av" style="width:36px;height:36px;font-size:15px">재</div></div><div class="body"><div style="padding:0 18px 8px;font-weight:700;font-size:20px">최근 재생한 항목</div>${MUS.map((m,i)=>`<button class="sg" style="width:100%;text-align:left" data-a="mplay" data-i="${i}"><div class="al">♪</div><div style="flex:1;min-width:0"><b style="font-size:16px;font-weight:500;display:block;color:${i===s.i?'#fa233b':'#000'}">${E(m[0])}</b><small style="color:#8e8e93">${E(m[1])}</small></div><span style="color:#8e8e93">⋯</span></button>`).join('')}</div><div class="mini"><div class="al" style="width:42px;height:42px;border-radius:7px;background:linear-gradient(135deg,#ff8a9a,#fa233b);display:flex;align-items:center;justify-content:center;color:#fff">♪</div><div style="flex:1;min-width:0;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${E(cur[0])}</div><button data-a="mpp" style="width:30px">${sv(s.p?'pause':'play',1).replace('<svg','<svg width="26" height="26"')}</button></div>${tabs([['h','홈','home'],['n','새로운 기능','img'],['r','라디오','globe'],['l','보관함','list'],['s','검색','search']],'h','toast')}</div>`},
 instagram(){const s=S.s;s.v=s.v||'home';if(!s.lk)s.lk=initLk();
@@ -980,11 +1057,11 @@ instagram(){const s=S.s;s.v=s.v||'home';if(!s.lk)s.lk=initLk();
  if(s.v==='dm'){const rows=DMS.slice().sort((a,b)=>cts(b.ts)-cts(a.ts));
   return `<div class="page" style="background:#fff"><div class="igh" style="min-height:0"><b style="flex:1;font-size:20px;display:flex;align-items:center;gap:6px">leejaehyun0913 ${CHV(15)}</b></div><div class="body" style="padding:0"><div style="display:flex;justify-content:space-between;padding:8px 16px;font-size:15px"><b>메시지</b><span style="color:#0095f6">요청</span></div>${rows.map(r=>`<button class="row" style="border:0;padding:8px 16px"${r.o?` data-a="igchat" data-u="${r.u}"`:''}>${igav(r.u,56)}<div class="t"><b style="font-weight:${r.un?700:400};font-size:15px">${E(r.u)}</b><p style="font-size:13.5px${r.un?';color:#000;font-weight:600':''}">${E(r.p)} · ${rel(r.ts)}</p></div>${r.un?'<i class="igdot"></i>':'<span style="color:#737373">📷</span>'}</button>`).join('')}</div>${tab}</div>`}
  if(s.v==='chat'){const u=s.cu||'_0hoony',th=DMT[u];
-  const sh=k=>{const p=IGP[k];return `<div class="igsh"><div class="h">${igav(p.u,24)}${E(p.u)}</div>${igimg(p)}<div class="c"><b>${E(p.u)}</b> ${E(p.c)}</div></div>`};
+  const sh=(k,si)=>{const p=si!=null&&IGP[k].imgs?Object.assign({},IGP[k],{img:IGP[k].imgs[si][0],em:IGP[k].imgs[si][1]}):IGP[k];return `<div class="igsh"><div class="h">${igav(p.u,24)}${E(p.u)}</div>${igimg(p)}<div class="c"><b>${E(p.u)}</b> ${E(p.c)}</div></div>`};
   const hd=th.nm?`<b style="font-size:15px;display:block;line-height:1.1">${E(th.nm)}</b><small style="color:#737373;font-size:12px">${E(u)}</small>`:`<b style="font-size:15px">${E(u)}</b>`;
   const T=th.T,body=T.map((x,i)=>{if(x.sep||x.sys)return `<div class="csep" style="margin:${i?18:6}px 0 10px">${E(x.sep||x.sys)}</div>`;
    const pv=T[i-1],nx=T[i+1],sp=pv&&!pv.sep&&!pv.sys&&pv.w===x.w,sn=nx&&!nx.sep&&!nx.sys&&nx.w===x.w;
-   return `<div class="dmr ${x.w}${sn?'':' ge'}">${x.w==='th'?`<span class="dmav">${sn?'':igav(u,28)}</span>`:''}${x.sh?sh(x.sh):`<div class="dmb ${x.w}${sp?' p':''}${sn?' n':''}">${E(x.t)}</div>`}</div>`}).join('');
+   return `<div class="dmr ${x.w}${sn?'':' ge'}">${x.w==='th'?`<span class="dmav">${sn?'':igav(u,28)}</span>`:''}${x.sh?sh(x.sh,x.si):`<div class="dmb ${x.w}${sp?' p':''}${sn?' n':''}">${E(x.t)}</div>`}</div>`}).join('');
   return `<div class="page" style="background:#fff"><div class="igh" style="min-height:0;gap:12px;padding:2px 14px 10px;border-bottom:.5px solid #efefef">${igav(u,34)}<div style="flex:1;min-width:0">${hd}</div>${SV('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',1.8)}${SV('<path d="M23 7l-7 5 7 5z"/><rect x="1" y="5" width="15" height="14" rx="2"/>',1.8)}</div><div class="body cbody" style="padding:0"><div class="msgbox" style="padding:12px 12px 8px">${body}${th.rd?'<div style="align-self:flex-end;font-size:11.5px;color:#737373;margin:2px 4px 0">읽음</div>':''}</div></div><div class="dmin"><span class="cam">${SV('<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>',2,'none','#fff').replace('width="25" height="25"','width="19" height="19"')}</span><span style="flex:1">메시지 보내기...</span>${[SV('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',1.8,'none','#262626'),SV('<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 16l-5-5-9 10"/>',1.8,'none','#262626'),SV('<path d="M21 12a9 9 0 1 1-9-9h0a9 9 0 0 1 9 9v0z"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9.5h.01M15 9.5h.01"/>',1.8,'none','#262626')].join('')}</div></div>`}
  if(s.v==='hoony'){const gr=['k1027','k915','a','h1','h2','h3','h4'];
   return `<div class="page" style="background:#fff"><div class="igh" style="min-height:0;gap:8px"><b style="flex:1;font-size:21px">_0hoony</b>${MENU}</div><div class="body" style="padding:0"><div style="display:flex;align-items:center;gap:24px;padding:10px 16px">${igav('_0hoony',86)}${stats([['7','게시물'],['10.4만','팔로워'],['253','팔로잉']])}</div><div style="padding:0 16px;font-size:14px;line-height:1.45"><b>김영훈</b><br><span style="color:#737373">모델</span><br>contact mail : kimyh@millbbang.com<br>📍 Seoul, Korea</div><div style="display:flex;gap:6px;padding:12px 16px">${IGF.on?`<button data-a="igfsh" style="flex:1;background:#efefef;border-radius:8px;padding:8px;font-weight:600;font-size:13.5px"><span style="display:inline-flex;align-items:center;gap:5px">팔로잉 ${CHV(13)}</span></button>`:`<button data-a="igfol" style="flex:1;background:#0095f6;color:#fff;border-radius:8px;padding:8px;font-weight:600;font-size:13.5px">팔로우</button>`}<button data-a="igchat" data-u="_0hoony" style="flex:1;background:#efefef;border-radius:8px;padding:8px;font-weight:600;font-size:13.5px">메시지</button></div><div class="igpr" style="border-top:.5px solid #dbdbdb">${gr.map((k,i)=>i<2?`<div data-a="igpost" data-k="${k}">${igimg(IGP[k])}</div>`:`<div>${igimg(IGP[k])}</div>`).join('')}</div></div>${tab}${s.fsh?igSheet():''}</div>`}
@@ -1025,10 +1102,10 @@ const WCH=[
 {n:'심채은',r:'주임',t:'경영지원팀',col:'#ff8aa5',p:'네~',tm:'오전 11:45',u:0,m:[['sep','2026년 11월 20일 금요일'],['th','대리님 점심 선약 있으신가요? ㅎㅎ','오전 11:42'],['me','아이코 네 ㅎㅎ 다음에 먹어요','오전 11:45'],['th','네~','오전 11:45']]},
 {n:'최동욱',r:'팀장',t:'신사업기획팀',col:'#5b8def',p:'고생 많아요. 부탁합니다.',tm:'어제',u:0,m:[['sep','2026년 11월 19일 목요일'],['th','이대리, 월요일 회의 전까지 11월 월간 보고 초안 부탁드립니다.','오후 5:20'],['me','네 팀장님, 금요일 퇴근 전까지 공유드리겠습니다.','오후 5:22'],['th','고생 많아요. 부탁합니다.','오후 5:23']]},
 {n:'한지우',r:'대리',t:'영업지원팀',col:'#3fbf8f',p:'넵 ㅎㅎ 이따 봬요~',tm:'11월 18일',u:0,m:[['sep','2026년 11월 18일 수요일'],['th','재현님 오늘 점심 같이 하실래요? 회사 앞에 새로 생긴 국밥집 가보려구요','오전 11:20'],['me','좋죠! 12시에 로비에서 뵐게요 ㅎㅎ','오전 11:23'],['th','넵 ㅎㅎ 이따 봬요~','오전 11:23']]},
-{n:'박철민',r:'과장',t:'신사업기획팀',col:'#8a6cff',p:'아니 이대리 잠시만',tm:'11월 17일',u:1,m:[['sep','2026년 6월 10일 수요일'],['th','이대리... 그때 물어본 선 안 볼 거야 진짜?','오후 4:12'],['me','ㅋㅋㅋ 과장님 저 여유가 없어요','오후 4:14'],['th','뭐 지금 애인이랑 결혼도 안 하는 거 같은데.... 진짜 좋은 상대라니까? 한번만 만나봐','오후 4:15'],['me','다음에 꼭 말씀 드릴게요ㅋㅋ 지금은 진짜 괜찮습니다','오후 4:17'],['th','에효... 내가 이대리였으면 이사람 저사람 다 만나봤을텐데 얼굴이 아깝다 아까워','오후 4:18'],['me','ㅋㅋㅋ 과장님 저 그정도 아닙니다','오후 4:19'],['sep','2026년 11월 17일 화요일'],['th','이대리 그때 말했던 선 아직도 생각없나?','오전 10:32'],['me','과장님 저 결혼합니다','오전 10:34'],['th','뭐라고?','오전 10:34'],['me','곧 말씀드리려고 했는데 먼저 물어봐주셔서 감사합니다','오전 10:35'],['th','아니 이대리 잠시만','오전 10:35']]},
+{n:'박철민',r:'과장',t:'신사업기획팀',col:'#8a6cff',p:'아니 이대리 잠시만',tm:'11월 17일',u:1,m:[['sep','2026년 6월 10일 수요일'],['th','이대리... 그때 물어본 선 안 볼 거야 진짜?','오후 4:12'],['me','ㅋㅋㅋ 과장님 저 여유가 없어요','오후 4:14'],['th','뭐 지금 애인이랑 결혼도 안 하는 거 같은데.... 진짜 좋은 상대라니까? 한번만 만나봐','오후 4:15'],['me','다음에 꼭 말씀 드릴게요ㅋㅋ 지금은 진짜 괜찮습니다','오후 4:17'],['th','에효... 내가 이대리였으면 이사람 저사람 다 만나봤을텐데 얼굴이 아깝다 아까워','오후 4:18'],['me','ㅋㅋㅋ 과장님 저 그정도 아닙니다','오후 4:19'],['sep','2026년 11월 17일 화요일'],['th','이대리 그때 말했던 선 아직도 생각없나?','오전 10:32'],['me','과장님 저 결혼합니다','오전 10:38'],['th','뭐라고?','오전 10:34'],['me','곧 말씀드리려고 했는데 먼저 물어봐주셔서 감사합니다ㅎㅎ','오전 10:35'],['me','이제 선은 못 보겠네요 죄송합니다 과장님','오전 10:36'],['th','아니 이대리','오전 10:36']]},
 {n:'윤하준',r:'사원',t:'재무회계팀',col:'#ffa94d',p:'넵 확인 후 바로 처리해드릴게요!',tm:'11월 12일',u:0,m:[['sep','2026년 11월 12일 목요일'],['th','대리님 지난주 출장비 정산 건 영수증이 하나 누락되어 있어요 ㅠㅠ','오후 3:40'],['me','아 죄송합니다 오늘 중으로 다시 올리겠습니다','오후 3:44'],['th','넵 확인 후 바로 처리해드릴게요!','오후 3:45']]}];
 const WPOST=[
-{tag:1,t:'회장님배 사내 팔씨름 대회 우승자',a:'커뮤니케이션팀',d:'2026.11.19',v:3218,cm:[['kc*****','이재현 대리님 우승 축하드립니다!! 💪🎉'],['ys******','헐 신사업기획팀 대리님이셨어요?'],['mj****','우승 축하드려요 ㅎㅎ 포상 받으시면 한턱 쏘십쇼'],['jh*****','2등 3등 하신 분들도 고생 많으셨습니다 👏'],['so****','결승전 현장에서 봤는데 진짜 박빙이었어요 ㅋㅋ 축하드립니다'],['th*******','신사업기획팀 파이팅~~ 🔥'],['bk*****','대리님 근육 미쳤어요ㅋㅋ 축하드립니다']],b:'커뮤니케이션팀입니다.\n지난 11월 13일(금) 개최된 \'회장님배 사내 팔씨름 대회\' 결과를 아래와 같이 공지드립니다.\n\n■ 우승 : 신사업기획팀 이재현 대리\n■ 2등 : 생산1팀 오성민 대리\n■ 3등 : 플랫폼개발팀 한도윤 과장\n\n포상으로 우승자에게는 포상금 100만 원과 특별휴가 1일, 2등에게는 포상금 50만 원, 3등에게는 포상금 30만 원을 드릴 예정입니다.\n시상은 12월 18일(금) 송년 임직원 행사에서 진행됩니다.\n\n참가해 주신 모든 임직원 여러분께 감사드리며, 수상자분들께 따뜻한 축하 부탁드립니다.'},
+{tag:1,t:'회장님배 사내 팔씨름 대회 우승자',a:'커뮤니케이션팀',d:'2026.11.19',v:3218,cm:[['kc*****','이재현 대리님 우승 축하드립니다!! 💪🎉'],['ys******','축하드립니다~'],['mj****','우승 축하드려요 ㅎㅎ 포상 받으시면 한턱 쏘십쇼'],['jh*****','2등 3등 하신 분들도 고생 많으셨습니다 👏'],['so****','결승전 현장에서 봤는데 진짜 박빙이었어요 ㅋㅋ 축하드립니다'],['th*******','신사업기획팀 파이팅~~ 🔥🔥🔥'],['bk*****','대리님 전완근 미쳤어요ㅋㅋ 축하드립니다']],b:'커뮤니케이션팀입니다.\n지난 11월 13일(금) 개최된 \'회장님배 사내 팔씨름 대회\' 결과를 아래와 같이 공지드립니다.\n\n■ 우승 : 신사업기획팀 이재현 대리\n■ 2등 : 생산1팀 오성민 대리\n■ 3등 : 플랫폼개발팀 한도윤 과장\n\n포상으로 우승자에게는 포상금 100만 원과 특별휴가 1일, 2등에게는 포상금 50만 원, 3등에게는 포상금 30만 원을 드릴 예정입니다.\n시상은 12월 18일(금) 송년 임직원 행사에서 진행됩니다.\n\n참가해 주신 모든 임직원 여러분께 감사드리며, 수상자분들께 따뜻한 축하 부탁드립니다.'},
 {tag:1,t:'[공지] 2026년 하반기 조직개편 및 인사발령 안내',a:'HR팀',d:'2026.11.16',v:1842,cm:[],b:'임직원 여러분 안녕하십니까. HR팀입니다.\n2026년 하반기 조직개편 및 인사발령 사항을 아래와 같이 안내드립니다.\n\n■ 발령일자 : 2026년 12월 1일(화)\n■ 대상 : 전 임직원\n■ 세부 내용 : 사내 인트라넷 > HR > 인사발령 공지 참고\n\n발령 대상자께서는 12월 1일부터 신규 소속 부서에서 근무해 주시기 바랍니다. 감사합니다.'},
 {tag:1,t:'[공지] 2026년 귀속 연말정산 서류 제출 일정 안내',a:'재무회계팀',d:'2026.11.12',v:1377,cm:[],b:'안녕하십니까. 재무회계팀입니다.\n2026년 귀속 연말정산 관련 서류 제출 일정을 안내드립니다.\n\n■ 제출 기간 : 2026년 12월 1일(화) ~ 12월 10일(목)\n■ 제출 방법 : 사내 인트라넷 > 재무 > 연말정산 시스템\n■ 문의 : 재무회계팀 연말정산 담당\n\n기한 내 미제출 시 정산이 지연될 수 있으니 유의해 주시기 바랍니다.'},
 {tag:1,t:'[안내] 2026 송년 임직원 행사 및 복지포인트 사용 안내',a:'커뮤니케이션팀',d:'2026.11.05',v:2104,cm:[],b:'커뮤니케이션팀입니다.\n올 한 해 노고에 감사드리며 송년 행사를 아래와 같이 안내드립니다.\n\n■ 일시 : 2026년 12월 18일(금) 오후 6시\n■ 장소 : 본사 대강당 및 로비\n■ 참석 : 전 임직원 (자율 참석)\n\n또한 잔여 복지포인트는 12월 20일까지 사용해 주시기 바랍니다.'},
@@ -1036,7 +1113,7 @@ const WPOST=[
 {t:'디지털전략팀 정우진 과장 결혼합니다!',a:'wj*****',d:'2026.11.18',v:612,cm:[['kim*****','축하드립니다 과장님!! 🎉'],['sh******','드디어 가시네요 ㅎㅎ 행복하세요~']],b:'안녕하세요, 디지털전략팀 정우진 과장입니다.\n\n늘 곁에서 함께해 주신 덕분에 좋은 분을 만나 결혼하게 되었습니다.\n\n■ 일시 : 2026년 12월 19일(토) 오후 1시\n■ 장소 : 서울 ◼️◼️ 웨딩홀 3층\n\n편하게 오셔서 축복해 주시면 감사하겠습니다. 모바일 청첩장은 사내 메신저로 따로 전달드리겠습니다.'},
 {t:'[동호회] 사내 풋살 동호회 신입 멤버 모집합니다 ⚽',a:'ph*****',d:'2026.11.17',v:566,cm:[['yj*****','경력 없어도 되나요? ㅋㅋ'],['ph*****','네 초보 환영입니다~ 매주 목요일 퇴근 후에 해요'],['gt****','저도 참여하고 싶어요! 쪽지 드릴게요']],b:'매주 목요일 퇴근 후 본사 인근 풋살장에서 같이 공 차실 분 모집합니다.\n실력 상관없이 즐겁게 운동하실 분이면 누구나 환영입니다.\n\n■ 장소 : 본사 인근 풋살장\n■ 시간 : 매주 목 오후 7시\n■ 회비 : 월 2만 원'},
 {t:'신사업기획팀 이*현 대리님 결혼 하셨나요? ㅠㅠ',a:'hs*****',d:'2026.11.16',v:934,cm:[['park*****','ㅋㅋ 이대리 안 죽었어~ ㅋㅋ'],['ohj******','애인 있으시답니다'],['hs*****','ㅠㅠ...','au']],b:'요즘 이야기가 많이 들려서 여쭤봅니다...\n혹시 아시는 분 계신가요? ㅠㅠ'},
-{t:'신사업기획팀 쪽 탕비실 간식이 너무 빠르게 줄어듭니다...',a:'jy*****',d:'2026.11.14',v:721,cm:[['kj*****','저도 느꼈어요 ㅋㅋ 요즘 진짜 빨리 없어짐'],['mh*****','간식으로 째째하게 굴지맙시다']],b:'드시는 건 좋지만 조금만 적당히 드셔주세요...'},
+{t:'※ 신사업기획팀 쪽 탕비실 간식이 너무 빠르게 줄어듭니다...',a:'jy*****',d:'2026.11.14',v:721,cm:[['kj*****','저도 느꼈어요 ㅋㅋ 요즘 진짜 빨리 없어짐 누가 박스째로 가져가서 먹는게 아닌 이상'],['mh*****','간식으로 째째하게 굴지맙시다...']],b:'드시는 건 좋지만 조금만 적당히 드셔주세요...'},
 {t:'퇴근 셔틀버스 막차 시간 바뀐 거 맞나요?',a:'sb****',d:'2026.11.13',v:318,cm:[['dk******','네 이번 달부터 10분 당겨졌어요'],['rn*****','공지 확인해보세요 인트라넷 총무 게시판에 있어요']],b:'어제 막차 놓칠 뻔했는데 시간표가 바뀐 건가요?\n정확한 시간 아시는 분 알려주세요 ㅠㅠ'}];
 function splash(id){return `<div class="page nosp" style="background:${SPLASH[id]};align-items:center;justify-content:center;gap:18px">${ic(id,110)}<div style="color:#fff;font-weight:700;font-size:22px;opacity:.95">${AP[id][0]}</div></div>`}
 function scrollChat(){const cb=document.querySelector('#app .cbody');if(cb)cb.scrollTop=cb.scrollHeight}
@@ -1051,7 +1128,7 @@ function msList(rec,q){const rows=rec.map((x,i)=>[x,i]).filter(([x])=>!q||x.incl
  return `<div style="display:flex;justify-content:space-between;align-items:baseline;padding:6px 16px 8px"><b style="font-size:19px">최근 검색</b><button data-a="msclr" style="color:#007aff;font-size:14px">전체 삭제</button></div>`+(rows.length?rows.map(([x,i])=>`<div class="rrow"><span style="color:#8e8e93;display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><button style="flex:1;text-align:left;font-size:17px" data-a="none">${E(x)}</button><button data-a="msdel" data-i="${i}" style="color:#c7c7cc;font-size:18px;padding:0 4px">✕</button></div>`).join(''):'<div style="padding:30px;text-align:center;color:#8e8e93">검색 기록이 없습니다</div>');}
 function msF(v){const l=$('#msl');if(l)l.innerHTML=msList(S.s.rec||[],v||'')}
 function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.i);toast.i=setTimeout(()=>e.style.display='none',1800)}
-function show(v){S.view=v;
+function show(v){S.view=v;const hw=$('#hwall');if(hw)hw.style.opacity=(v==='lock'||v==='pin')?0:1;
  $('#lock').style.display=v==='lock'?'block':'none';$('#gb').style.display=v==='app'?'flex':'none';
  $('#lock').classList.toggle('up',v==='pin'&&0);
  $('#pin').className='layer'+(v==='pin'?' show':'');
@@ -1072,7 +1149,7 @@ const ACT={
  ptab(d){S.s.tab=d.k;drawApp()},dig(d){S.s.d=(S.s.d||'')+d.n;drawApp()},dbk(){S.s.d=(S.s.d||'').slice(0,-1);drawApp()},
  call(d){startCall(d.n)},pf(d){S.s.f=d.k;drawApp()},ctog(d){S.s[d.k]=S.s[d.k]?0:1;drawApp()},dcall(){if(!S.s.d)return toast('번호를 입력하세요');const sp=S.s.d==='1';const n=sp?'영훈이':S.s.d;S.s.d='';startCall(n,0,sp?'영훈이:spd':null)},
  hang(d){const t=S.s;if(t.ending||!t.call)return;clearInterval(S.ci);clearTimeout(S.ct);clearTimeout(S.ct2);
-  if(d&&t.call==='영훈이'&&!t.inc){S.hc=(S.hc||0)+1;if(S.hc>=5){S.hc=0;hoonSay(['야! 혼날래?','장난치지말구 빨리 오기나 해 ㅡㅡ'],4000)}}
+  if(d&&t.call==='영훈이'&&!t.inc){S.hc=(S.hc||0)+1;if(S.hc>=5){S.hc=0;hoonSay(['야! 이재현','혼날래?','장난치지말구 빨리 오기나 해 ㅡㅡ'],4000)}}
   t.ending=1;const pg=$('#app .call');pg&&pg.classList.add('ending');const e=$('#ct');e&&(e.textContent='통화 종료');
   clearTimeout(S.endT);S.endT=setTimeout(()=>{if(!(S.app==='phone'&&S.s===t&&t.ending)){callEnded();return}
    const pg2=$('#app .call'),cl=pg2?pg2.cloneNode(true):null;
@@ -1106,7 +1183,7 @@ addEventListener('keydown',e=>{if(S.view!=='pin')return;if(/^\d$/.test(e.key))AC
 setInterval(()=>{status();if(S.view==='lock'){const t=kst(now());const tm=$('#lock .tm');if(tm)tm.textContent=`${t.h%12||12}:${String(t.mi).padStart(2,'0')}`}if(S.view==='home')renderHomeLite()},5000);
 function renderHomeLite(){const f=$('#fol');if(f&&f.className)return;renderHome()}
 /* ===== GQ 매거진 (사파리) ===== */
-const GQI=['IMG_0212.jpeg','IMG_0332.jpeg','IMG_333.jpeg','IMG_0334.jpeg','IMG_0335.jpeg'];/* 매거진 이미지 5장: 이 파일명으로 넣으면 자동 적용 (0=상단, 1=인터뷰 후, 2·3=크로스, 4=마지막) */
+const GQI=['IMG_0212.jpeg','IMG_0332.jpeg','IMG_0333.jpeg','IMG_0334.jpeg','IMG_0335.jpeg'];/* 매거진 이미지 5장: 이 파일명으로 넣으면 자동 적용 (0=상단, 1=인터뷰 후, 2·3=크로스, 4=마지막) */
 const GQ=[
 `T|GQ KOREA · AUGUST 2026|김영훈의 서른,/여전히 새로운 얼굴|MODEL · KIM YOUNGHOON`,
 `L|오래도록 카메라 앞에 서 온 남자. 익숙한 일상 속에서도 새로운 순간을 찾아내는 모델 김영훈과 나눈 이야기.`,
@@ -1182,9 +1259,9 @@ function gqView(s){if(s.web==='nv'||s.web==='nvload')return nvView(s);const top=
  return `<div class="page" style="background:#fff">${top}<div class="body gq">${gqBody()}</div>${tool}</div>`}
 /* ===== 네이버 검색 / 뉴스 (사파리) ===== */
 /* ===== 카카오톡 알림: 잠금 해제 10초 뒤 '영훈이' 메시지 ===== */
-function notiSched(){if(S.notiDone)return;S.notiDone=1;clearTimeout(S.nt);S.nt=setTimeout(()=>pushHoon('오냐'),10000)}
+function notiSched(){if(S.notiDone)return;S.notiDone=1;clearTimeout(S.nt);S.nt=setTimeout(()=>pushHoon('오냐아'),10000)}
 function unlock(){notiSched();if(S.reboot){S.reboot=0;hoonTimer(()=>incoming('영훈이','영훈이:off'),5000)}renderHome();show('home');const h=$('#home'),p=$('#pin'),w=$('.wall');h.classList.add('hin');w.classList.add('zin');p.className='layer show out';setTimeout(()=>{h.classList.remove('hin');w.classList.remove('zin');if(S.view!=='pin')p.className='layer'},650)}
-const NVI=['IMG_0220.jpeg','IMG_0221.jpeg'];/* 0=기사 사진·썸네일1, 1=썸네일2 */
+const NVI=['hb1.jpg','hb2.jpg'];/* 0=기사 사진·썸네일1, 1=썸네일2 */
 const nvimg=(n,c)=>`<div class="${c}"><span>📷</span><img src="${NVI[n]}" alt="" onerror="this.remove()"></div>`;
 const CMT=[['no********','씹존잘 화이팅!!',13,0,'l'],['ki*****','얜 너무 예쁘게 생겨서 별로임ㅋㅋ',2,6,'d'],['98******','첨보는데;; 듣보;;;;',1,4,'d'],['wu****','친일파. 척살. 반민특위법. 만들자.!!',0,21,'',[['im*******','아저씨 기사 잘못 눌럿어요',5,0,'l']]]];
 function nvcm(c,re){return `<div class="nvcm${re?' re':''}"><b>${re?'↳ ':''}${c[0]}</b><p>${E(c[1])}</p><div class="nvv"><span class="l${c[4]==='l'?' on':''}">👍 ${c[2]}</span><span class="d${c[4]==='d'?' on':''}">👎 ${c[3]}</span></div>${(c[5]||[]).map(r=>nvcm(r,1)).join('')}</div>`}
@@ -1240,7 +1317,34 @@ addEventListener('pointermove',e=>{if(!igdr)return;const dx=e.clientX-igdr.x,dy=
 const igend=()=>{if(!igdr)return;const d=igdr,t=d.t,w=t.clientWidth;igdr=null;const st=Math.round(d.l/w);let i=Math.round(t.scrollLeft/w);if(Math.abs(t.scrollLeft-d.l)>w*.15)i=t.scrollLeft>d.l?st+1:st-1;i=Math.max(0,Math.min(t.children.length-1,i));t.style.scrollSnapType='';t.scrollTo({left:i*w,behavior:'smooth'})};
 addEventListener('pointerup',igend);addEventListener('pointercancel',igend);
 /* 이미지 확장자 자동 대체 (jpeg→jpg→JPG…) */
-document.addEventListener('error',e=>{const im=e.target;if(!im||im.tagName!=='IMG')return;const m=(im.getAttribute('src')||'').match(/^(.*\/)?(IMG_\d+)\.(\w+)$/i);if(!m)return;const L=['jpeg','jpg','JPG','JPEG','png','PNG'],i=+(im.dataset.xi||0);if(i<L.length){im.dataset.xi=i+1;const nx=(m[1]||'')+m[2]+'.'+L[i];if(nx!==im.getAttribute('src')){e.stopImmediatePropagation();im.src=nx;return}if(i+1<L.length){e.stopImmediatePropagation();im.dataset.xi=i+2;im.src=(m[1]||'')+m[2]+'.'+L[i+1];return}}},true);
+document.addEventListener('error',e=>{const im=e.target;if(!im||im.tagName!=='IMG')return;const src=im.getAttribute('src')||'',m=src.match(/^(.*\/)?IMG_(\d+)\.(\w+)$/i);if(!m)return;
+ if(!im._v){const d=m[1]||'',n=m[2],nm=[...new Set([n,String(+n).padStart(4,'0'),String(+n)])],X=['jpeg','jpg','JPG','JPEG','png','PNG'];im._v=[];nm.forEach(x=>X.forEach(y=>im._v.push(d+'IMG_'+x+'.'+y)));im._v=im._v.filter(u=>u!==src);im._i=0}
+ if(im._i<im._v.length){e.stopImmediatePropagation();im.src=im._v[im._i++]}},true);
+
+/* --- 모바일 사원증 (v6) --- */
+R.sawon=function(){const s=S.s;s.t=s.t||'id';const meal=s.t==='meal';
+ const cv=meal?'--a1:#12a672;--a2:#0a6e50;--a3:#e3f6ee;--a4:rgba(18,166,114,.32)':'--a1:#2a4bd7;--a2:#142a9c;--a3:#e8edff;--a4:rgba(42,75,215,.32)';
+ const photo=`<div class="swp"><span>🙂</span><img src="IMG_0195.jpeg" alt="" onerror="this.remove()"></div>`;
+ const info=meal?`<div><small>이번 달 식권 사용</small><b>14회</b></div><div><small>사번</small><b>09130808</b></div>`:`<div><small>사번</small><b>09130808</b></div><div><small>입사일</small><b>2021.03.02</b></div>`;
+ return `<div class="page swpg" style="${cv}"><div class="top s"><span class="swtt">모바일 사원증</span></div><div class="body" style="padding:0 0 40px"><div class="swseg"><button class="${meal?'':'on'}" data-a="stab" data-k="id">사원증</button><button class="${meal?'on':''}" data-a="stab" data-k="meal">식권</button></div>
+ <div class="swc"><div class="swcap"><div class="swlg"><i>T</i>(주)TBZ</div><span class="swtag">${meal?'MEAL TICKET':'EMPLOYEE ID'}</span></div>
+ <div class="swpf">${photo}<div class="swnm"><b>이재현</b><span>신사업기획팀 · 대리</span><em>${meal?'식권 사용 가능':'재직중'}</em></div></div>
+ <div class="swinfo">${info}</div>
+ <div class="swqr"><div class="qrb">${QRS(meal?13:7,164)}</div><div class="swtm">QR 갱신까지 <b id="qrt">00:30</b></div><div class="swbar"><i></i></div></div></div>
+ <button class="swbtn" data-a="toast" data-t="${meal?'식권 QR을 리더기에 인식해 주세요':'출입 인증이 완료되었습니다'}">${meal?'식권 사용':'출입 인증'}</button></div></div>`};
+/* --- 애플 전원 끄기 화면 (v6) --- */
+function showPower(){let w=$('#pwr');
+ if(!w){w=document.createElement('div');w.id='pwr';
+  w.innerHTML=`<div class="sl"><div class="tx">밀어서 전원 끄기</div><div class="pk"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1c1c1e" stroke-width="2.5" stroke-linecap="round"><path d="M12 3v8.5M7 6.6a8 8 0 1 0 10 0"/></svg></div></div><button class="cx" data-a="pcancel">취소</button><div class="psp"><i style="transform:rotate(0deg);animation-delay:-1.000s"></i><i style="transform:rotate(30deg);animation-delay:-0.917s"></i><i style="transform:rotate(60deg);animation-delay:-0.833s"></i><i style="transform:rotate(90deg);animation-delay:-0.750s"></i><i style="transform:rotate(120deg);animation-delay:-0.667s"></i><i style="transform:rotate(150deg);animation-delay:-0.583s"></i><i style="transform:rotate(180deg);animation-delay:-0.500s"></i><i style="transform:rotate(210deg);animation-delay:-0.417s"></i><i style="transform:rotate(240deg);animation-delay:-0.333s"></i><i style="transform:rotate(270deg);animation-delay:-0.250s"></i><i style="transform:rotate(300deg);animation-delay:-0.167s"></i><i style="transform:rotate(330deg);animation-delay:-0.083s"></i></div>`;
+  $('#ph').appendChild(w)}
+ w.className='on';const k=w.querySelector('.pk'),t=w.querySelector('.tx');k.style.transition='none';k.style.transform='';t.style.opacity='';
+ requestAnimationFrame(()=>requestAnimationFrame(()=>w.classList.add('vis')))}
+let pwk=null;
+ph.addEventListener('pointerdown',e=>{const k=e.target.closest&&e.target.closest('#pwr .pk');if(!k)return;pwk={k,x:e.clientX,d:0,max:k.parentNode.clientWidth-k.offsetWidth-12};k.style.transition='none'});
+addEventListener('pointermove',e=>{if(!pwk)return;const d=Math.max(0,Math.min(pwk.max,e.clientX-pwk.x));pwk.d=d;pwk.k.style.transform=`translateX(${d}px)`;pwk.k.parentNode.querySelector('.tx').style.opacity=Math.max(0,1-d/pwk.max*1.6)});
+addEventListener('pointerup',()=>{if(!pwk)return;const o=pwk;pwk=null;o.k.style.transition='transform .28s cubic-bezier(.2,.8,.2,1)';const t=o.k.parentNode.querySelector('.tx');
+ if(o.d>o.max*.8){o.k.style.transform=`translateX(${o.max}px)`;const w=$('#pwr');setTimeout(()=>{w.classList.add('go');setTimeout(()=>{powerOff();setTimeout(()=>{w.className=''},900)},1700)},200)}
+ else{o.k.style.transform='';t.style.opacity=''}});
 
 /* ===== 추가 기능: 사파리 하단바 / 통화 / 영훈이 트리거 / 설정 / 전원 ===== */
 const PHP='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z';
@@ -1272,6 +1376,7 @@ function hoonEnter(){KR.hoon.u=0;if(S.unf===1){S.unf=2;hoonSay(['머해?','ㅎ�
 function hoonReact(t){const s=t.replace(/\s/g,'');
  if(S.guide&&S.gst===1&&s.includes('미안')){S.guide='';S.gst=2;hoonSay(['빨리 다시 걸어 ~.~'],1400,()=>{S.guide='웅';S.gst=3;fillGuide()});return}
  if(S.guide&&S.gst===3&&/^(웅|응|ㅇㅇ)/.test(s)){S.guide='';S.gst=0;return}
+ if(s.includes('날아감')){hoonSay(['그만'],900,()=>{S.guide='웅...';S.gst=3;fillGuide()});return}
  if(/힘들다|힘들어|위로해줘/.test(s)){hoonTimer(()=>incoming('영훈이','영훈이:sad'),3000);return}
  if(s.includes('김영훈')){hoonSay(['어쭈?','성떼라🤨'],900);return}
  if(s.includes('사랑')){hoonSay(['ㅋㅋㅋ','나도 사랑해❤️'],900);return}
@@ -1336,7 +1441,7 @@ function powerOff(){const f=$('#off');
 function igSheet(){const it=(t,ch)=>`<button class="igsi">${t}${ch?'<span style="color:#8e8e93">›</span>':''}</button>`;
  return `<div class="igsx" data-a="igfx"><div class="igsd" data-a="none"><i class="gr2"></i>${it('즐겨찾기에 추가')}${it('친한 친구에 추가')}${it('뮤트',1)}${it('제한',1)}<button class="igsi" data-a="igunf" style="color:#ed4956">팔로우 취소</button></div></div>`}
 Object.assign(ACT,{
- shut(){powerOff()},
+ shut(){showPower()},pcancel(){const w=$('#pwr');if(!w)return;w.classList.remove('vis');setTimeout(()=>{if(!w.classList.contains('vis'))w.className=''},380)},
  swtog(d,el){el.classList.toggle('on')},
  kvoice(){const n=KR[S.s.room].n;ACT.open({id:'phone'});startCall(n)},
  idecl(){missCall()},
