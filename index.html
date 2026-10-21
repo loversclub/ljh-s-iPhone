@@ -105,7 +105,7 @@ button,input{font:inherit;color:inherit}button{border:0;background:none;padding:
 .cd .ds{display:flex;gap:3px;height:5px}.cd .ds i{width:5px;height:5px;border-radius:50%}
 .ecard{display:flex;gap:10px;padding:10px 18px;border-top:.5px solid var(--line)}.ecard i{width:4px;border-radius:2px;flex:none}.ecard b{font-size:16px;font-weight:600}.ecard small{display:block;color:#8e8e93;font-size:13px;margin-top:2px}
 /* chat */
-.bub{max-width:76%;padding:8px 13px;border-radius:19px;font-size:16px;line-height:1.3;margin:2px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.bub{max-width:76%;padding:8px 13px;border-radius:19px;font-size:16px;line-height:1.3;margin:6px 0;white-space:pre-wrap;overflow-wrap:anywhere}
 .msgbox{display:flex;flex-direction:column;padding:6px 14px 14px}
 .bub.me{align-self:flex-end;background:#34c759;color:#fff}.bub.th{align-self:flex-start;background:#e9e9eb}
 .csep{text-align:center;font-size:11.5px;color:#8e8e93;margin:12px 0 6px}
@@ -1067,7 +1067,7 @@ baemin(){const s=S.s;s.tab=s.tab||'home';let body;
  <div class="bmc"><div style="font-size:16px;font-weight:800;color:#111;margin-bottom:6px">내 정보</div><div class="bmi"><span>이름</span><small>이재현</small></div><div class="bmi"><span>닉네임</span><small>이재현</small></div><div class="bmi"><span>휴대폰 번호</span><small>010-◼️◼️◼️◼️-◼️◼️◼️◼️</small></div><div class="bmi"><span>이메일</span><small>◼️◼️◼️◼️@naver.com</small></div></div></div>`;
  else body=`<div class="bz" style="padding:12px 16px 18px"><div style="font-size:19px;font-weight:800"><span style="display:inline-flex;align-items:center;gap:6px">서울특별시 ○○구 ○○동 ${CHV(17,'#fff')}</span></div><div style="margin-top:14px;background:#fff;border-radius:12px;padding:12px 14px;color:#999;font-size:15px">지금 뭐 먹고 싶어?</div></div><div class="cat">${[['🍚','한식'],['🥟','중식'],['🍗','치킨'],['🍕','피자'],['🥩','족발·보쌈'],['🍢','분식'],['🍱','돈까스·회'],['☕','카페'],['🍔','패스트푸드'],['🥗','샐러드']].map(c=>`<div><span>${c[0]}</span>${c[1]}</div>`).join('')}</div><div style="background:#f4f4f6;padding:12px"><div style="background:linear-gradient(135deg,#2ac1bc,#6ee7d9);border-radius:16px;padding:20px;color:#fff;font-size:18px;font-weight:800;line-height:1.35">오늘 점심 뭐 먹지?<br><small style="font-weight:500;font-size:13px">배민1 무료배달 가게 모아보기</small></div><div style="margin-top:12px;font-weight:700;font-size:16px;color:#111">자주 시킨 가게</div>${[ORD[3],ORD[2],ORD[4]].map(o=>`<div class="ord" style="border-radius:12px;margin:8px 0">${E(o[0])}<br><small>${o[1]}</small></div>`).join('')}</div>`;
  return `<div class="page bzp" style="background:#fff"><div class="body" style="padding:0">${body}</div><div class="tabs">${[['home','홈','home'],['shop','장보기·쇼핑','cart'],['zzim','찜','heart'],['order','주문내역','list'],['my','마이배민','user']].map(([k,l,i])=>`<button class="${s.tab===k?'on':''}" style="${s.tab===k?'color:#2ac1bc':''}" ${['home','order','my'].includes(k)?`data-a="btab" data-k="${k}"`:''}>${sv(i)}${l}</button>`).join('')}</div></div>`},
-maps(){const s=S.s;if(!s.rec)s.rec=['성수다락','OOO 호텔','OOO 공원','투썸플레이스','진진차이나','미엘','OOO 호텔','서울앵무새'];
+maps(){const s=S.s;if(!s.rec)s.rec=['성수다락','롯데호텔 OO','OOO 공원','투썸플레이스 OOO점','진진차이나','미엘','신라호텔 OO점','서울앵무새'];
  if(s.sf)return `<div class="page" style="background:#fff"><div style="display:flex;gap:12px;align-items:center;padding:2px 14px 10px;flex:none"><div class="sfq" style="margin:0;flex:1;background:#eeeef0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input id="msi" placeholder="지도 검색" autocomplete="off" oninput="msF(this.value)"></div><button data-a="msclose" style="color:#007aff;font-size:17px">취소</button></div><div class="body" id="msl">${msList(s.rec,'')}</div></div>`;
  const wh='fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
  const fav=[['집','#34c759',`<svg width="26" height="26" viewBox="0 0 24 24" ${wh}><path d="M3.5 11 12 3.5l8.5 7.500V20a1 1 0 0 1-1 1H15v-6H9v6H4.500a1 1 0 0 1-1-1z"/></svg>`],['회사','#007aff',`<svg width="26" height="26" viewBox="0 0 24 24" ${wh}><rect x="5" y="3" width="14" height="18" rx="1.500"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg>`],['영훈이집','#ff375f',`<svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 21S3 14.600 3 8.700C3 5.900 5.100 4 7.500 4c1.700 0 3.400 1 4.500 2.600C13.100 5 14.800 4 16.500 4 18.900 4 21 5.900 21 8.700 21 14.600 12 21 12 21z"/></svg>`]];
@@ -1118,8 +1118,8 @@ sawon(){const s=S.s;s.t=s.t||'id';const meal=s.t==='meal';
 works(){const s=S.s;s.tab=s.tab||'h';
  if(s.room!=null){const c=WCH[s.room];let pv=null;
   const body=c.m.map(([w,t,tm])=>{if(w==='sep'){pv=null;return `<div class="csep wsep">${E(t)}</div>`}const f=pv!==w;pv=w;
-   if(w==='me')return `<div style="display:flex;justify-content:flex-end;align-items:flex-end;gap:6px;margin:${f?10:3}px 0 0"><span class="wt">${tm}</span><div class="wb me">${E(t)}</div></div>`;
-   return `<div style="display:flex;gap:8px;margin:${f?10:3}px 0 0;align-items:flex-start"><div class="wav" style="background:${c.col};${f?'':'visibility:hidden'}">${c.n[0]}</div><div style="min-width:0;max-width:78%">${f?`<div class="wn">${E(c.n)} ${E(c.r)} <small>${E(c.t)}</small></div>`:''}<div style="display:flex;gap:6px;align-items:flex-end"><div class="wb th">${E(t)}</div><span class="wt">${tm}</span></div></div></div>`}).join('');
+   if(w==='me')return `<div style="display:flex;justify-content:flex-end;align-items:flex-end;gap:6px;margin:${f?20:9}px 0 0"><span class="wt">${tm}</span><div class="wb me">${E(t)}</div></div>`;
+   return `<div style="display:flex;gap:8px;margin:${f?20:9}px 0 0;align-items:flex-start"><div class="wav" style="background:${c.col};${f?'':'visibility:hidden'}">${c.n[0]}</div><div style="min-width:0;max-width:78%">${f?`<div class="wn">${E(c.n)} ${E(c.r)} <small>${E(c.t)}</small></div>`:''}<div style="display:flex;gap:6px;align-items:flex-end"><div class="wb th">${E(t)}</div><span class="wt">${tm}</span></div></div></div>`}).join('');
   return `<div class="page"><div class="top s">${bk('채팅')}<div class="tt">${E(c.n)} ${E(c.r)}</div><span style="width:50px"></span></div><div class="body cbody"><div class="msgbox">${body}</div></div><div class="minp">메시지 입력</div></div>`}
  if(s.post!=null){const p=WPOST[s.post];
   return `<div class="page"><div class="top s">${bk('게시판')}<div class="tt">사내게시판</div><span style="width:50px"></span></div><div class="body"><div class="wpb"><div class="wpt">${p.tag?'<span class="wtag">공지</span>':''}${E(p.t)}</div><div class="wpm">${E(p.a)} · ${p.d} · 조회 ${NF(p.v)}</div><div class="wpc">${E(p.b)}</div></div><div class="wcs"><div class="nvch">댓글 <b>${p.cm.length}</b></div>${p.cm.map(([u,t,f])=>`<div class="wcm2"><b>${E(u)}${f==='au'?'<em class="wchip">글쓴이</em>':''}</b><p>${E(t)}</p></div>`).join('')||'<div style="color:#999;padding:8px 0;font-size:14px">첫 댓글을 남겨보세요</div>'}</div></div></div>`}
@@ -1219,9 +1219,9 @@ ph.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!el)ret
 ph.addEventListener('submit',e=>{e.preventDefault();const q=new FormData(e.target).get('q').trim();if(q){S.s.q=q;drawApp()}});
 /* 스와이프: 잠금화면에서 위로 → PIN / 앱에서 아래쪽에서 위로 → 홈 */
 let sy=null,sy0=0;
-ph.addEventListener('pointerdown',e=>{sy=e.clientY;sy0=e.clientY-ph.getBoundingClientRect().top});
+let syS=0;ph.addEventListener('pointerdown',e=>{sy=e.clientY;sy0=e.clientY-ph.getBoundingClientRect().top;syS=e.target.closest&&e.target.closest('.sheetm')?1:0});
 addEventListener('pointerup',e=>{if(sy==null)return;const dy=e.clientY-sy;sy=null;
- if(dy<-60){if(S.view==='lock')ACT.topin();else if(S.view==='app'&&sy0>ph.offsetHeight-110)ACT.home();else if(S.view==='home'&&sy0>ph.offsetHeight-110&&$('#fol').classList.contains('show'))ACT.home()}});
+ if(dy<-60){if(S.view==='lock')ACT.topin();else if(S.view==='app'&&sy0>ph.offsetHeight-110&&!syS)ACT.home();else if(S.view==='home'&&sy0>ph.offsetHeight-110&&$('#fol').classList.contains('show'))ACT.home()}});
 addEventListener('keydown',e=>{if(S.view!=='pin')return;if(/^\d$/.test(e.key))ACT.key({n:e.key});else if(e.key==='Backspace')ACT.bk();else if(e.key==='Escape')ACT.cancel()});
 setInterval(()=>{status();if(S.view==='lock'){const t=kst(now());const tm=$('#lock .tm');if(tm)tm.textContent=`${t.h%12||12}:${String(t.mi).padStart(2,'0')}`}if(S.view==='home')renderHomeLite()},5000);
 function renderHomeLite(){const f=$('#fol');if(f&&f.className)return;if(S.hdrag)return;renderHome()}
@@ -1348,7 +1348,7 @@ ph.addEventListener('keydown',e=>{const t=e.target,c=t.classList;if(!c||S.app!==
 let shy=null;
 function mapSheet(dn){const m=$('.sheetm');if(!m)return;S.s.shd=dn;m.classList.toggle('dn',dn)}
 ph.addEventListener('pointerdown',e=>{shy=e.target.closest('.sheetm')?e.clientY:null});
-addEventListener('pointerup',e=>{if(shy==null)return;const dy=e.clientY-shy;shy=null;if(Math.abs(dy)>25)mapSheet(dy>0)});
+addEventListener('pointerup',e=>{if(shy==null)return;const dy=e.clientY-shy;shy=null;if(Math.abs(dy)>25)mapSheet(dy>0);else if(S.s&&S.s.shd)mapSheet(false)});
 ph.addEventListener('wheel',e=>{if(e.target.closest('.sheetm')&&Math.abs(e.deltaY)>4)mapSheet(e.deltaY>0)},{passive:true});
 ph.addEventListener('keydown',e=>{if(S.app==='kakao'&&S.s.room&&e.target.id==='kin'&&e.key==='Enter'&&!e.isComposing){e.preventDefault();ACT.ksend()}});
 
@@ -1386,7 +1386,7 @@ document.addEventListener('error',e=>{const im=e.target;if(!im||im.tagName!=='IM
 /* --- 모바일 사원증 (v6) --- */
 R.sawon=function(){const s=S.s;s.t=s.t||'id';const meal=s.t==='meal';
  const cv=meal?'--a1:#12a672;--a2:#0a6e50;--a3:#e3f6ee;--a4:rgba(18,166,114,.32)':'--a1:#2a4bd7;--a2:#142a9c;--a3:#e8edff;--a4:rgba(42,75,215,.32)';
- const photo=`<div class="swp"><span>🙂</span><img src="IMG_0195.jpeg" alt="" onerror="this.remove()"></div>`;
+ const photo=`<div class="swp"><span>🙂</span><img src="IMG_0320.jpeg" alt="" onerror="this.remove()"></div>`;
  const info=meal?`<div><small>이번 달 식권 사용</small><b>14회</b></div><div><small>사번</small><b>09130808</b></div>`:`<div><small>사번</small><b>09130808</b></div><div><small>입사일</small><b>2021.03.02</b></div>`;
  return `<div class="page swpg" style="${cv}"><div class="top s"><span class="swtt">모바일 사원증</span></div><div class="body" style="padding:0 0 40px"><div class="swseg"><button class="${meal?'':'on'}" data-a="stab" data-k="id">사원증</button><button class="${meal?'on':''}" data-a="stab" data-k="meal">식권</button></div>
  <div class="swc"><div class="swcap"><div class="swlg"><i>T</i>(주)TBZ</div><span class="swtag">${meal?'MEAL TICKET':'EMPLOYEE ID'}</span></div>
