@@ -1325,7 +1325,7 @@ function notiSched(){if(S.notiDone)return;S.notiDone=1;clearTimeout(S.nt);S.nt=s
 function unlock(){S.hpage=0;notiSched();if(S.reboot){S.reboot=0;hoonTimer(()=>incoming('영훈이','영훈이:off'),5000)}renderHome();show('home');const h=$('#home'),p=$('#pin'),w=$('.wall');h.classList.add('hin');w.classList.add('zin');p.className='layer show out';setTimeout(()=>{h.classList.remove('hin');w.classList.remove('zin');if(S.view!=='pin')p.className='layer'},650)}
 const NVI=['hb1.jpg','hb2.jpg'];/* 0=기사 사진·썸네일1, 1=썸네일2 */
 const nvimg=(n,c)=>`<div class="${c}"><span>📷</span><img src="${NVI[n]}" alt="" onerror="this.remove()"></div>`;
-const CMT=[['no********','씹존잘 화이팅!!',13,0,'l'],['ki*****','얜 너무 예쁘게 생겨서 별로임ㅋㅋ',2,6,'d'],['98******','첨보는데;; 듣보;;;;',1,4,'d'],['wu****','친일파. 척살. 반민특위법. 만들자.!!',0,21,'',[['im*******','아저씨 기사 잘못 눌럿어요',5,0,'l']]]];
+const CMT=[['no********','씹존잘 미칫다 화이팅!!',13,0,'l'],['ki*****','얜 너무 예쁘게 생겨서 별로임ㅋㅋ',2,6,'d'],['98******','첨보는데;; 듣보;;;;',1,4,'d'],['wu****','친일파. 척살. 반민특위법. 만들자.!!',0,21,'',[['im*******','아저씨 기사 잘못 눌럿어요',5,0,'l']]]];
 function nvcm(c,re){return `<div class="nvcm${re?' re':''}"><b>${re?'↳ ':''}${c[0]}</b><p>${E(c[1])}</p><div class="nvv"><span class="l${c[4]==='l'?' on':''}">👍 ${c[2]}</span><span class="d${c[4]==='d'?' on':''}">👎 ${c[3]}</span></div>${(c[5]||[]).map(r=>nvcm(r,1)).join('')}</div>`}
 function nvView(s){const art=s.nvp==='art',
  GT=safBot(art?'n.news.naver.com':'m.search.naver.com',s.web==='nvload'),
