@@ -69,7 +69,7 @@ button,input{font:inherit;color:inherit}button{border:0;background:none;padding:
 .fico .ai{width:100%;height:100%;box-shadow:none;border-radius:22%}
 .dockw{position:absolute;left:12px;right:12px;bottom:26px;height:96px;border-radius:36px;background:rgba(255,255,255,.28);-webkit-backdrop-filter:blur(26px) saturate(1.5);backdrop-filter:blur(26px) saturate(1.5);display:flex;justify-content:space-around;align-items:center;padding:0 8px}
 .srch{position:absolute;left:50%;bottom:132px;margin-left:-50px;width:100px;height:32px;border-radius:16px;background:rgba(255,255,255,.28);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;gap:5px;font-weight:500}
-.pgd{position:absolute;bottom:170px;left:0;right:0;display:flex;justify-content:center;gap:7px}.pgd i{width:7px;height:7px;border-radius:50%;background:#fff6}.pgd i:first-child{background:#fff}
+.pgd{position:absolute;bottom:170px;left:0;right:0;display:flex;justify-content:center;gap:7px}.pgd i{width:7px;height:7px;border-radius:50%;background:#fff6}.pgd i.on{background:#fff}
 #fol{position:absolute;inset:0;z-index:50;display:none;background:rgba(0,0,0,.22);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);flex-direction:column;align-items:center;padding-top:150px;color:#fff}
 #fol.show{display:flex;animation:fopen .34s cubic-bezier(.2,.8,.25,1)}#fol.hide{display:flex;pointer-events:none;animation:fclose .27s cubic-bezier(.5,0,.8,.4) forwards}@keyframes fopen{from{opacity:0;transform:scale(.22)}}@keyframes fclose{to{opacity:0;transform:scale(.22)}}
 @keyframes fin{from{opacity:0;transform:scale(.9)}}
@@ -438,6 +438,26 @@ button,input{font:inherit;color:inherit}button{border:0;background:none;padding:
 .igsd .gr2{display:block;width:38px;height:5px;border-radius:3px;background:#c7c7cc;margin:0 auto 8px}
 .igsi{display:flex;justify-content:space-between;align-items:center;width:100%;padding:15px 20px;font-size:16px;text-align:left}
 @keyframes nout{to{transform:translateY(-120px);opacity:0}}
+
+/* ===== 홈 화면 좌우 페이지 + 디데이 위젯/앱 ===== */
+#home{padding-top:0;overflow:hidden}
+.hsl{position:absolute;left:0;top:0;bottom:0;width:200%;display:flex;transition:transform .38s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.hsl.drag{transition:none}
+.hpg{position:relative;flex:none;width:50%;height:100%;padding-top:66px}
+.pgd i{transition:background .25s}
+.ddw{margin:10px 20px 0;height:164px;border-radius:26px;background:rgba(255,255,255,.34);-webkit-backdrop-filter:blur(26px) saturate(1.5);backdrop-filter:blur(26px) saturate(1.5);padding:16px 18px;color:#111;display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer}
+.ddw .h{display:flex;justify-content:space-between;align-items:center}
+.ddw .h b{font-size:24px;font-weight:600;line-height:1}
+.ddw .h small{font-size:12.5px;font-weight:700;color:#ff3b30}
+.ddw .n{font-size:62px;font-weight:300;letter-spacing:-2px;line-height:1;font-variant-numeric:tabular-nums}
+.ddw .n small{font-size:24px;font-weight:500;letter-spacing:0;margin-left:3px}
+.ddw .s{font-size:12.5px;color:#444;line-height:1.2}
+.ddh{padding:2px 20px 8px;font-size:13px;color:#8e8e93}
+.ddg{margin:0 16px 20px;border-radius:14px;background:#fff;overflow:hidden}
+.ddr{display:flex;align-items:center;gap:12px;padding:14px 16px;border-top:.5px solid var(--line)}.ddr:first-child{border-top:0}
+.ddr i{width:4px;align-self:stretch;border-radius:2px;flex:none}
+.ddr .tx{flex:1;min-width:0}.ddr .tx b{display:block;font-size:18px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ddr .tx small{display:block;font-size:13px;color:#8e8e93;margin-top:3px}
+.ddr .ddv{flex:none;font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.3px}
 </style>
 </head>
 <body>
@@ -495,11 +515,12 @@ const ICO={
 };
 ICO.instagram=()=>`<defs><radialGradient id="gIg" cx="10" cy="62" r="68" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fdf497"/><stop offset=".1" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset="1" stop-color="#285AEB"/></radialGradient></defs><rect width="60" height="60" fill="url(#gIg)"/><rect x="14" y="14" width="32" height="32" rx="9.5" fill="none" stroke="#fff" stroke-width="3.2"/><circle cx="30" cy="30" r="7.6" fill="none" stroke="#fff" stroke-width="3.2"/><circle cx="39.3" cy="20.7" r="2.1" fill="#fff"/>`;
 ICO.settings=()=>{const teeth=Array.from({length:8},(_,i)=>`<rect x="-4.2" y="-22" width="8.4" height="10" rx="2.2" fill="#e9eaee" transform="rotate(${i*45})"/>`).join('');return `<defs><linearGradient id="gSt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9acb4"/><stop offset="1" stop-color="#5c5f68"/></linearGradient><linearGradient id="gSg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f5f8"/><stop offset="1" stop-color="#cfd1d8"/></linearGradient></defs><rect width="60" height="60" fill="url(#gSt)"/><g transform="translate(30 30)">${teeth}<circle r="16" fill="url(#gSg)"/><circle r="9.5" fill="#6a6d76"/><circle r="6.4" fill="none" stroke="#9fa2ab" stroke-width="1.4"/><circle r="3" fill="#4a4d55"/></g>`};
+ICO.dday=()=>`<defs><linearGradient id="gDd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8aa0"/><stop offset="1" stop-color="#f0285a"/></linearGradient></defs><rect width="60" height="60" fill="url(#gDd)"/><text x="30" y="17" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff" letter-spacing=".6">D-DAY</text><path d="M30 49c-9-6.5-14-11-14-16.5a7.5 7.5 0 0 1 14-3.6 7.5 7.5 0 0 1 14 3.6c0 5.5-5 10-14 16.5z" fill="#fff"/>`;
 /* 공식 아이콘 PNG를 아래 경로에 넣으면 그림 아이콘 대신 자동 적용됩니다 (파일이 없으면 SVG 아이콘 유지) */
 const IMGS={baemin:'icons/baemin.png',coupang:'icons/coupangeats.png',ddang:'icons/ddangyo.png',mc:'icons/mcdonalds.png',messages:'icons/messages.png',instagram:'icons/instagram.png',maps:'icons/maps.png',photos:'icons/photos.png',music:'icons/music.png',kakao:'icons/kakao.png'};
 const ICX=['png','jpeg','jpg','JPG','JPEG','PNG'];function icErr(im){const i=+im.dataset.i+1;if(i<ICX.length){im.dataset.i=i;im.src=im.dataset.b+'.'+ICX[i]}else im.remove()}
 const ic=(id,s=60)=>`<span class="ai" style="${typeof s==='number'?`width:${s}px;height:${s}px`:'width:100%;height:100%'}"><svg viewBox="0 0 60 60">${ICO[id]()}</svg>${IMGS[id]?`<img src="${IMGS[id]}" data-b="${IMGS[id].replace(/\.png$/,'')}" data-i="0" alt="" draggable="false" onerror="icErr(this)">`:''}</span>`;
-const AP={phone:['전화'],messages:['메시지'],kakao:['카카오톡'],youtube:['YouTube'],calendar:['캘린더'],clock:['시계'],notes:['메모'],stocks:['증권',1],maps:['지도'],photos:['사진'],safari:['Safari'],music:['음악'],baemin:['배달의민족'],coupang:['쿠팡이츠'],ddang:['땡겨요'],mc:['맥도날드'],sawon:['모바일사원증'],works:['웍스'],instagram:['Instagram'],settings:['설정']};
+const AP={phone:['전화'],messages:['메시지'],kakao:['카카오톡'],youtube:['YouTube'],calendar:['캘린더'],clock:['시계'],notes:['메모'],stocks:['증권',1],maps:['지도'],photos:['사진'],safari:['Safari'],music:['음악'],baemin:['배달의민족'],coupang:['쿠팡이츠'],ddang:['땡겨요'],mc:['맥도날드'],sawon:['모바일사원증'],works:['웍스'],instagram:['Instagram'],settings:['설정'],dday:['디데이']};
 const FOLD={work:['업무',['sawon','works']],deli:['배달',['baemin','coupang','ddang','mc']]};
 const SPLASH={coupang:'#00b0e8',ddang:'#2f6bff'};
 /* ===== 상태바 ===== */
@@ -546,7 +567,7 @@ const csHtml=e=>`<div class="csp">${E(e[0])}</div><div class="ctx">${E(e[1])}</d
 const SCR={
 '영훈이':[['영훈이','웅, 내려오고 있어?'],['영훈이','오랜만에 커피 말고 다른 거 시켰는데 너무 달아서 맘에 안 들어..'],['영훈이','빨리와서 너가 먹어 ㅎㅎ'],['영훈이','ㅋㅋ 얼른와~'],['영훈이','사랑해~']],
 '영훈이:spd':[['영훈이','웅'],['영훈이','ㅋㅋㅋ 뭐야 그냥 걸어봤다고?'],['영훈이','너 그러다 최팀장한테 놀고 있냐고 잡힌다? ㅋㅋ'],['영훈이','얼른와~'],['영훈이','(웅성웅성) 아, 네?'],['영훈이','인스타 아이디요?'],['재현','...영훈아?'],['영훈이','아... 뭐 네! 알려드릴게요! 언더바, 하고요...'],['재현','....'],['재현','영훈아'],['재현','무서운 사람일 수도 있고 위험한 사람일 수도 있는데'],['재현','알려주면 안 되지'],['영훈이','ㅎㅎ..'],['영훈이','가짜 아이디 알려줬어 아무 영훈이..'],['재현','하..'],['영훈이','흐흐'],['영훈이','얼른와 바부야'],['영훈이','보고싶어']],
-'영훈이:off':[['영훈이','야 이재현!!'],['영훈이','너 폰 왜 꺼져있어?'],['영훈이','놀랐잖아! 뭔 일있나해서!!'],['영훈이','후...'],['영훈이','얼른와. 나 기다려.'],['영훈이','...보고싶어']],
+'영훈이:off':[['영훈이','야 이재현!!'],['영훈이','너 폰 왜 꺼져있어?'],['영훈이','놀랐잖아! 뭔 일 있나 해서!!'],['영훈이','후...'],['영훈이','얼른와.'],['영훈이','...보'],['영훈이','...보고싶어']],
 '영훈이:sad':[['영훈이','힘들어?'],['영훈이','누가 그랬어💢'],['영훈이','얼른와 충전시켜줄게 ㅎㅎ'],['영훈이','....어떻게 해줄 거냐고?'],['영훈이','음...'],['영훈이','그건 차에가서 알려줄게~'],['영훈이','끊는다 ㅎㅎ']],
 '엄마':[['엄마','재현아~ 밥은 먹었어?'],['재현','응 엄마, 방금 먹었어'],['엄마','그래 잘했네. 요즘 많이 바쁘지?'],['재현','조금~ 주말에 다시 전화할게'],['엄마','응 건강 챙기고. 끊어~']],
 '아빠':[['아빠','재현아, 별일 없지?'],['재현','네 아빠, 잘 지내요'],['아빠','그래 몸 조심하고. 끊는다']],
@@ -783,6 +804,12 @@ const KR={
 >롤 ㄱㄱ?
 <ㅇㅇ
 `],
+['2026-09-16 13:08',`
+>축의금 5만원 퉁?
+<ㄴㄴ
+>돈도 잘 버는 사람들이
+>째째하시네
+`],
 ['2026-09-26 21:47',`
 >롤 ㄱㄱ?
 <ㄴㄴ 데이트있음
@@ -798,17 +825,18 @@ const KR={
 ['2026-11-12 21:16',`
 >형
 >어제 뭔 일 있었어?
-<아니?
+<아니
 <왜 ㅋㅋ
->영훈이형이 전화왔길래
+>영훈이형한테 전화왔길래
 >심통나있던데? 형한테
 <ㅋㅋㅋ
->뭐 빼빼로를 어쩌구궁시렁하던데 뭔일인데?
+>뭐 빼빼로를 어쩌구궁시렁하던데 
+>뭔일인데?
 <아 ㅋㅋ
 <회사 사람들이 빼빼로 나눠줘서
 <영훈이 만날 때 가방에 몇 개 들고 있었는데
 <그거 보고 기분이 별로였나봐
->아하~
+>아하
 >몇 개 받았는데?
 <흠..
 <13갠가?
@@ -816,13 +844,14 @@ const KR={
 <걍 다들 돌리면서 나눠준 거얔ㅋ
 <나한테만 준 거 아님
 >그래...
->이래서구나
+>힘내
 >난 영훈이형이나 달래주러가야겠다
 <?
+>수고해 형~
 `]])},
  /* 미리보기만 보이는 방 (클릭 불가) */
  fut:{n:'풋살팟⚽️',c:12,e:'⚽',u:4,ts:kms('2026-11-20 14:05'),p:'이번 주 풋살 경기 장소 공지합니다! 참석하실 분들은 참가의사 남겨주세요'},
- men:{n:'김민수, 최도현, 오재욱, 서민재, 준혁',c:6,e:'👥',u:7,ts:kms('2026-11-19 23:40'),p:'랭전 돌리실 분'},
+ men:{n:'김민수, 최도현, 오재욱, 서민재, 준혁',c:6,e:'👥',u:7,ts:kms('2026-11-19 23:40'),p:'랭전 돌리자 브실이하 ㄲㅈ고'},
  jc:{n:'제이콥',e:'👤',img:'IMG_0289.jpeg',u:0,ts:kms('2026-11-18 22:05'),p:'ㅋㅋㅋ 그랴'},
  hd:{n:'현대카드',e:'💳',u:1,ts:kms('2026-11-19 09:00'),p:'[현대카드] 10월 청구금액을 안내드립니다. 앱에서 확인해보세요.'},
  kb:{n:'카카오뱅크',e:'🏦',u:1,ts:kms('2026-11-15 10:30'),p:'이번 달 결제 내역을 확인해보세요'},
@@ -870,6 +899,17 @@ const ORD=[
 const MUS=[['여름을 좋아하는 이유','윤딴딴'],['데리러 갈게 (Feat. Sik-k, 릴보이)','크루셜스타'],['한사람','허각'],['널 생각해','원 모어 찬스(one more chance)'],['7년간의 사랑','유영석'],['희재','성시경'],['넌 감동이었어','성시경'],['마침표','아이유']];
 const VID=[['🏙️','linear-gradient(135deg,#1a2a52,#6a4fd8)','[4K] 서울 야경 드라이브 플레이리스트','드라이브TV · 조회수 82만회 · 3주 전','1:02:14'],['🍳','linear-gradient(135deg,#f6d365,#fda085)','자취생 10분 요리 | 간단 파스타 레시피','쿠킹로그 · 조회수 31만회 · 1개월 전','10:27'],['🐶','linear-gradient(135deg,#c9e8d0,#6fb287)','강아지랑 산책하는 브이로그 🐕','멍멍일기 · 조회수 120만회 · 2주 전','8:45'],['⚽','linear-gradient(135deg,#7ed957,#256d2c)','풋살 하이라이트 모음 (주말 리그)','FUTSAL KR · 조회수 9.4만회 · 5일 전','12:03']];
 let S={view:'lock',app:null,pin:'',s:{}};
+/* ===== 디데이 데이터 (여기를 수정하면 목록/위젯이 바뀝니다) =====
+   k:'since' = 지난 날짜 (+N일), k:'up' = 다가오는 날짜 (D-N) */
+const DDS=[
+ {t:'🍞♥️',d:Date.UTC(2026,10,20)-896*864e5,k:'since',c:'#ff3b30'},
+ {t:'상견례',d:Date.UTC(2026,11,5),k:'up',c:'#ff2d92'},];
+const ddToday=()=>{const t=kst(now());return Date.UTC(t.y,t.m-1,t.d)};
+const ddN=x=>Math.round((ddToday()-x.d)/864e5);
+const ddLab=n=>n>=0?'+'+Number(n).toLocaleString('en-US')+'일':'D-'+Number(-n).toLocaleString('en-US');
+const ddDs=ms=>{const d=new Date(ms);return d.getUTCFullYear()+'.'+String(d.getUTCMonth()+1).padStart(2,'0')+'.'+String(d.getUTCDate()).padStart(2,'0')+' ('+WD[d.getUTCDay()]+')'};
+function DDW(){const x=DDS[0],n=ddN(x),nx=Math.ceil((n+1)/100)*100;
+ return `<div class="ddw" data-a="open" data-id="dday"><div class="h"><b>${x.t}</b><small>디데이</small></div><div class="n">+${Number(n).toLocaleString('en-US')}<small>일</small></div><div class="s">${ddDs(x.d)} 시작 · ${nx}일까지 ${nx-n}일</div></div>`}
 /* ===== 렌더 ===== */
 function setTheme(){const ph=$('#ph'),dark=S.view==='lock'||S.view==='pin'||S.view==='home'||(S.view==='app'&&(['stocks','clock','coupang','ddang','mc','baemin'].includes(S.app)&&!(S.app==='clock')&&true));
  const forceLight=S.view==='lock'||S.view==='pin'||S.view==='home';
@@ -889,9 +929,10 @@ function renderHome(){const t=kst(now()),w=new Date(Date.UTC(t.y,t.m-1,t.d)).get
  const evh=(e,pre='')=>`<div class="e"><i style="background:${e.c}"></i><div>${E(e.t)}<small>${pre}${e.s}</small></div></div>`;
  const ap=id=>`<button class="ap" data-a="${DIS.includes(id)?'none':'open'}" data-id="${id}">${ic(id)}<span>${AP[id][0]}</span></button>`;
  const fo=k=>`<button class="ap" data-a="fold" data-id="${k}"><div class="fico">${FOLD[k][1].slice(0,9).map(i=>ic(i,'f')).join('')}</div><span>${FOLD[k][0]}</span></button>`;
- $('#home').innerHTML=`<div class="wdg" data-a="open" data-id="calendar"><div class="dd"><small>${WD[w]}요일</small><b>${t.d}</b><span>${all.length?`오늘 일정 ${all.length}개`:'오늘 일정 없음'}</span></div><div class="ev">${all.length?`<div class="h">오늘 할 일</div>${evs.map(e=>evh(e)).join('')}`:`<div class="h">오늘은 남은 일정이 없습니다</div><div class="h2">다음 일정</div>${nx.map(x=>evh(x.e,`${x.m}월 ${x.d}일 (${WD[x.w]}) · `)).join('')}`}</div></div>
- <div class="grid">${['calendar','clock','notes','stocks','maps','photos','safari','music','instagram','settings'].map(ap).join('')}${fo('work')}${fo('deli')}</div>
- <div class="srch"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg>검색</div><div class="pgd"><i></i><i></i></div>
+  const WD1=`<div class="wdg" data-a="open" data-id="calendar"><div class="dd"><small>${WD[w]}요일</small><b>${t.d}</b><span>${all.length?`오늘 일정 ${all.length}개`:'오늘 일정 없음'}</span></div><div class="ev">${all.length?`<div class="h">오늘 할 일</div>${evs.map(e=>evh(e)).join('')}`:`<div class="h">오늘은 남은 일정이 없습니다</div><div class="h2">다음 일정</div>${nx.map(x=>evh(x.e,`${x.m}월 ${x.d}일 (${WD[x.w]}) · `)).join('')}`}</div></div>`;
+ $('#home').innerHTML=`<div class="hsl" id="hsl" style="transform:translateX(${-(S.hpage||0)*50}%)"><div class="hpg">
+ <div class="grid">${['calendar','clock','notes','stocks','maps','photos','safari','music','instagram','settings'].map(ap).join('')}${fo('work')}${fo('deli')}</div></div><div class="hpg">${WD1}${DDW()}</div></div>
+ <div class="srch"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg>검색</div><div class="pgd"><i class="${(S.hpage||0)?'':'on'}"></i><i class="${(S.hpage||0)?'on':''}"></i></div>
  <div class="dockw">${['phone','messages','kakao','youtube'].map(id=>`<button data-a="${DIS.includes(id)?'none':'open'}" data-id="${id}">${ic(id)}</button>`).join('')}</div>
  <div id="fol" data-a="foldx"></div>`}
 function foldOpen(k,el){const f=$('#fol');clearTimeout(S.fc);if(el){const r=el.getBoundingClientRect(),q=$('#ph').getBoundingClientRect(),sc=q.width/$('#ph').offsetWidth||1;f.style.transformOrigin=((r.left+r.width/2-q.left)/sc)+'px '+((r.top+r.height/2-q.top)/sc)+'px'}f.innerHTML=`<h4>${FOLD[k][0]}</h4><div class="fg" data-a="none">${FOLD[k][1].map(id=>`<button class="ap" data-a="${DIS.includes(id)?'none':'open'}" data-id="${id}">${ic(id)}<span>${AP[id][0]}</span></button>`).join('')}</div>`;f.className='show'}
@@ -963,6 +1004,8 @@ const DMS=[
  {u:'taehyung.lee_7',p:'게시물을 보냈습니다.',ts:'2026-10-30 23:02',un:1},
  {u:'chaeyoung__x',p:'ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ',ts:'2026-11-09 17:25',un:1}];
 const R={
+dday(){const it=DDS.map(x=>({...x,n:ddN(x)})),first=it[0],rest=it.slice(1).sort((a,b)=>Math.abs(a.n)-Math.abs(b.n)),all=[first,...rest];
+ return `<div class="page" style="background:#f2f2f7"><div class="top"><h1>디데이</h1></div><div class="body"><div class="ddh">디데이 ${all.length}개</div><div class="ddg">${all.map(x=>`<div class="ddr"><i style="background:${x.c}"></i><div class="tx"><b>${E(x.t)}</b><small>${ddDs(x.d)}${x.k==='since'?' 시작':''}</small></div><span class="ddv" style="color:${x.k==='since'?'#ff3b30':'#007aff'}">${ddLab(x.n)}</span></div>`).join('')}</div></div></div>`},
 phone(){const s=S.s;s.tab=s.tab||'recent';
  if(s.call){const sc=SCR[s.sk||s.call],ln=s.li!=null&&sc?sc[s.li]:null,ct=s.ending?'통화 종료':s.callOn?cfmt(Date.now()-s.callOn):'발신 중...',first=!s.cin;s.cin=1;
   const I=d=>`<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
@@ -1181,7 +1224,26 @@ addEventListener('pointerup',e=>{if(sy==null)return;const dy=e.clientY-sy;sy=nul
  if(dy<-60){if(S.view==='lock')ACT.topin();else if(S.view==='app'&&sy0>ph.offsetHeight-110)ACT.home();else if(S.view==='home'&&sy0>ph.offsetHeight-110&&$('#fol').classList.contains('show'))ACT.home()}});
 addEventListener('keydown',e=>{if(S.view!=='pin')return;if(/^\d$/.test(e.key))ACT.key({n:e.key});else if(e.key==='Backspace')ACT.bk();else if(e.key==='Escape')ACT.cancel()});
 setInterval(()=>{status();if(S.view==='lock'){const t=kst(now());const tm=$('#lock .tm');if(tm)tm.textContent=`${t.h%12||12}:${String(t.mi).padStart(2,'0')}`}if(S.view==='home')renderHomeLite()},5000);
-function renderHomeLite(){const f=$('#fol');if(f&&f.className)return;renderHome()}
+function renderHomeLite(){const f=$('#fol');if(f&&f.className)return;if(S.hdrag)return;renderHome()}
+/* ===== 홈 화면 좌우 스와이프 (배경은 고정, 아이콘/위젯 페이지만 이동) ===== */
+const hSet=(p,dx)=>{const t=$('#hsl');if(t)t.style.transform=dx?`translateX(calc(${-p*50}% + ${dx}px))`:`translateX(${-p*50}%)`};
+function hPage(p){S.hpage=Math.max(0,Math.min(1,p));const t=$('#hsl');if(t)t.classList.remove('drag');hSet(S.hpage,0);document.querySelectorAll('.pgd i').forEach((x,i)=>x.classList.toggle('on',i===S.hpage))}
+const hOpen=()=>{if(S.view!=='home')return false;const f=$('#fol');return !(f&&f.className)};
+let hd=null;
+ph.addEventListener('pointerdown',e=>{if(e.button>0||!hOpen()||!e.target.closest('#hsl'))return;hd={x:e.clientX,y:e.clientY,t:Date.now(),dx:0,on:0,id:e.pointerId}});
+addEventListener('pointermove',e=>{if(!hd||e.pointerId!==hd.id)return;
+ const sc=ph.getBoundingClientRect().width/ph.offsetWidth||1,dx=(e.clientX-hd.x)/sc,dy=(e.clientY-hd.y)/sc;
+ if(!hd.on){if(Math.abs(dx)>8&&Math.abs(dx)>Math.abs(dy)*1.2){hd.on=1;S.hdrag=1;const t=$('#hsl');t&&t.classList.add('drag')}else{if(Math.abs(dy)>12)hd=null;return}}
+ const p=S.hpage||0;let x=dx;if((p===0&&x>0)||(p===1&&x<0))x*=.3;hd.dx=x;hSet(p,x)});
+function hEnd(){if(!hd)return;const h=hd;hd=null;if(!h.on)return;S.hdrag=0;S.hsw=Date.now();
+ const W=ph.offsetWidth,p=S.hpage||0,dt=Date.now()-h.t;let np=p;
+ if(h.dx<-W*.18||(h.dx<-40&&dt<300))np=p+1;else if(h.dx>W*.18||(h.dx>40&&dt<300))np=p-1;hPage(np)}
+addEventListener('pointerup',hEnd);addEventListener('pointercancel',hEnd);
+/* 스와이프 직후 발생하는 클릭(앱 실행 등)은 무시 */
+ph.addEventListener('click',e=>{if(Date.now()-(S.hsw||0)<250){e.stopPropagation();e.preventDefault()}},true);
+/* 데스크톱: 좌우 방향키 / 트랙패드 가로 스크롤 */
+addEventListener('keydown',e=>{if(!hOpen())return;if(e.key==='ArrowRight')hPage((S.hpage||0)+1);else if(e.key==='ArrowLeft')hPage((S.hpage||0)-1)});
+let hwt=0;ph.addEventListener('wheel',e=>{if(!hOpen())return;if(Math.abs(e.deltaX)>Math.abs(e.deltaY)&&Math.abs(e.deltaX)>20&&Date.now()-hwt>500){hwt=Date.now();hPage((S.hpage||0)+(e.deltaX>0?1:-1))}},{passive:true});
 /* ===== GQ 매거진 (사파리) ===== */
 const GQI=['IMG_0212.jpeg','IMG_0332.jpeg','IMG_0333.jpeg','IMG_0334.jpeg','IMG_0335.jpeg'];/* 매거진 이미지 5장: 이 파일명으로 넣으면 자동 적용 (0=상단, 1=인터뷰 후, 2·3=크로스, 4=마지막) */
 const GQ=[
@@ -1260,7 +1322,7 @@ function gqView(s){if(s.web==='nv'||s.web==='nvload')return nvView(s);const top=
 /* ===== 네이버 검색 / 뉴스 (사파리) ===== */
 /* ===== 카카오톡 알림: 잠금 해제 10초 뒤 '영훈이' 메시지 ===== */
 function notiSched(){if(S.notiDone)return;S.notiDone=1;clearTimeout(S.nt);S.nt=setTimeout(()=>pushHoon('오냐아'),10000)}
-function unlock(){notiSched();if(S.reboot){S.reboot=0;hoonTimer(()=>incoming('영훈이','영훈이:off'),5000)}renderHome();show('home');const h=$('#home'),p=$('#pin'),w=$('.wall');h.classList.add('hin');w.classList.add('zin');p.className='layer show out';setTimeout(()=>{h.classList.remove('hin');w.classList.remove('zin');if(S.view!=='pin')p.className='layer'},650)}
+function unlock(){S.hpage=0;notiSched();if(S.reboot){S.reboot=0;hoonTimer(()=>incoming('영훈이','영훈이:off'),5000)}renderHome();show('home');const h=$('#home'),p=$('#pin'),w=$('.wall');h.classList.add('hin');w.classList.add('zin');p.className='layer show out';setTimeout(()=>{h.classList.remove('hin');w.classList.remove('zin');if(S.view!=='pin')p.className='layer'},650)}
 const NVI=['hb1.jpg','hb2.jpg'];/* 0=기사 사진·썸네일1, 1=썸네일2 */
 const nvimg=(n,c)=>`<div class="${c}"><span>📷</span><img src="${NVI[n]}" alt="" onerror="this.remove()"></div>`;
 const CMT=[['no********','씹존잘 화이팅!!',13,0,'l'],['ki*****','얜 너무 예쁘게 생겨서 별로임ㅋㅋ',2,6,'d'],['98******','첨보는데;; 듣보;;;;',1,4,'d'],['wu****','친일파. 척살. 반민특위법. 만들자.!!',0,21,'',[['im*******','아저씨 기사 잘못 눌럿어요',5,0,'l']]]];
